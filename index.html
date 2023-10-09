@@ -8,12 +8,13 @@
     <title>
         Gambling Simulator by Purple Rice
     </title>
+
 <body>
 
     <nav class="navbar">
         <div class="logo">
             <a href="/" class="logo"> 
-                <img class= "logo" src="logo.png" position= left 150px height =80 width = 80></a>
+                <img class= "logo" src="logo.png" position= left  height =80 width = 80></a>
         </div>
         <div class="navbar__all">
             <a href="/" class="navbar__about">About Us</a>
@@ -38,15 +39,10 @@
  
         .box-wrapper {
             height: 95vh;
-            width: 100%;
+            width: 95%;
             display: flex;
             flex-direction: column;
             text-align: center;
-        }
- 
-        #box1 {
-            padding: 10px;
-            border: solid 1px green
         }
  
         #box2 {
@@ -83,26 +79,18 @@
             margin-top: 8px
         }
  
-        #box8 {
-            flex-grow: 1;
-            border: solid 1px black
-        }
     </style>
 </head>
 
-<body>
     <div class="box-wrapper">
-        <div id="box1">
-            Box 1
-        </div>
- 
-        <div id="box2">
-            Box 2
-        </div>
- 
         <div id="box3">
             <div id="box4">
                 Box 4
+                <marquee behavior="alternate" scrollamount="30">
+                    <marquee behavior="alternate" scrollamount="30" direction="down">
+                        <img src="chicken.png" height = 100 width = 100 >
+                    </marquee>
+                </marquee>
             </div>
             <div class="middle-column">
                 <div id="box5">
@@ -112,19 +100,8 @@
                     Box 6
                 </div>
             </div>
-            <div id="box8">
-                Box 8
-            </div>
         </div>
     </div>
-</body>
-    <h1></h1>
-    <p> this is our game </p>
-    <marquee behavior="alternate" scrollamount="30">
-        <marquee behavior="alternate" scrollamount="30" direction="down">
-            <img src="chicken.png" height = 100 width = 100 >
-        </marquee>
-    </marquee>
 
 </body>
 </html>
