@@ -5,11 +5,11 @@ h1 {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', sans-serif;
+    font-family: 'Courier New', sans-serif;
 }
 
 .navbar {
-    background: #131313;
+    background: #FFFFFF;
     height: 80px;
     display: flex;
     /* justify-content: center; */
