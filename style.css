@@ -1,0 +1,99 @@
+h1 {
+    color: purple
+}
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background: #FFFFFF;
+    height: 80px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 1.4rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__all {
+    display: flex;
+    justify-content: space-evenly;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 50px;
+    align-items: center;
+    background: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    margin: 2%;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.box-wrapper {
+    height: 90vh;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#box2 {
+    padding: 8px;
+    border: solid 1px blue
+}
+
+#box3 {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    border: solid 1px green
+}
+
+#box4 {
+    flex-grow: 2;
+    border: solid 1px orange
+}
+
+.middle-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.middle-column div {
+    flex-grow: 1;
+    margin: 0 8px;
+    border: solid 1px red;
+}
+
+.middle-column div+div {
+    margin-top: 8px
+}
+
+marquee{
+    height: 100vh;
+    width: 100%;
+}
+  
+input[type="number"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    position: inherit;
+    border: 1px solid #c801f0;
+    border-radius: 5px;
+}
+  

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="format.css">
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
  
     <title>
@@ -21,83 +21,29 @@
             <a href="/" class="navbar__restart">Restart</a>
             <a href="/" class="navbar__withdraw">Withdraw</a>
             <a href="/" class="navbar__deposit">Deposit</a>
-            <a href="/" class="navbar__crashtrends">Crash Trends</a>
         </div> 
     </nav>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
- 
-        body {
-            margin: 2%;
-            justify-content: center;
-            overflow: hidden;
-        }
- 
-        .box-wrapper {
-            height: 95vh;
-            width: 95%;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
- 
-        #box2 {
-            padding: 8px;
-            border: solid 1px blue
-        }
- 
-        #box3 {
-            padding: 10px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: row;
-            border: solid 1px green
-        }
- 
-        #box4 {
-            flex-grow: 2;
-            border: solid 1px orange
-        }
- 
-        .middle-column {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
- 
-        .middle-column div {
-            flex-grow: 1;
-            margin: 0 8px;
-            border: solid 1px red;
-        }
- 
-        .middle-column div+div {
-            margin-top: 8px
-        }
- 
-    </style>
+
 </head>
 
     <div class="box-wrapper">
         <div id="box3">
             <div id="box4">
-                Box 4
+                Play Game
+                <input type="number" id="numberInput" name="numberInput" step="1" min="0" placeholder="Place your bet" required>
                 <marquee behavior="alternate" scrollamount="30">
                     <marquee behavior="alternate" scrollamount="30" direction="down">
                         <img src="chicken.png" height = 100 width = 100 >
                     </marquee>
                 </marquee>
             </div>
+
             <div class="middle-column">
                 <div id="box5">
-                    Box 5
+                    Crash Trends
                 </div>
                 <div id="box6">
-                    Box 6
+                    Rage Button
                 </div>
             </div>
         </div>
