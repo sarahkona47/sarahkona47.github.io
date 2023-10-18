@@ -1,5 +1,11 @@
 // Declare Variables
 const previous_crashes = [];
+
+// const earnElement = document.getElementById("earn");
+const numberInput = document.getElementById("numberInput");
+const timerElement = document.getElementById("timer");
+
+// Probability
 const probability_ranges = [
     {"min_time": 2, "max_time": 5, "total_probability": 0.1},  // 2-5: 10% crash
     {"min_time": 8, "max_time": 14, "total_probability": 0.1},  // 8-14: 10% crash
@@ -9,10 +15,6 @@ const probability_ranges = [
     {"min_time": 50, "max_time": 55, "total_probability": 0.1},  // 50-55: 10% crash
     ];
 
-// const earnElement = document.getElementById("earn");
-const numberInput = document.getElementById("numberInput");
-const timerElement = document.getElementById("timer");
-
 let startTime = Date.now();
 let crashTime = Math.floor(Math.random() *10000);
 
@@ -20,45 +22,45 @@ let crashTime = Math.floor(Math.random() *10000);
 function updateTimer() {
     const currentTime = Date.now();
     const elapsedTime = (currentTime - startTime)/1000;
-    timerElement.textContent = elapsedTime.toFixed(2) + 'x';
+    const displayTime = (elapsedTime * 0.1) + 1
+    timerElement.textContent = displayTime.toFixed(2) + 'x';
 
-    if (elapsedTime >= 2 && elapsedTime <= 5 && Math.random() < 0.10) {
-        timerElement.textContent = elapsedTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + elapsedTime.toFixed(2) + 'x \n');        
+    if (displayTime >= 2 && displayTime <= 5 && Math.random() < 0.10) {
+        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
         disableButton();
-    } else if (elapsedTime >= 8 && elapsedTime <= 14 && Math.random() < 0.15){
-        timerElement.textContent = elapsedTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + elapsedTime.toFixed(2) + 'x \n');        
+    } else if (displayTime >= 8 && displayTime <= 14 && Math.random() < 0.10){
+        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
         disableButton();
-    } else if (elapsedTime >= 16 && elapsedTime <= 25 && Math.random() < 0.10){
-        timerElement.textContent = elapsedTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + elapsedTime.toFixed(2) + 'x \n');        
+    } else if (displayTime >= 16 && displayTime <= 25 && Math.random() < 0.10){
+        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
         disableButton();
-    } else if (elapsedTime >= 30 && elapsedTime <= 35 && Math.random() < 0.10){
-        timerElement.textContent = elapsedTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + elapsedTime.toFixed(2) + 'x \n');                
+    } else if (displayTime >= 30 && displayTime <= 35 && Math.random() < 0.10){
+        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
         disableButton();
-    } else if (elapsedTime >= 40 && elapsedTime <= 45 && Math.random() < 0.10){
-        timerElement.textContent = elapsedTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + elapsedTime.toFixed(2) + 'x \n');                
+    } else if (displayTime >= 40 && displayTime <= 45 && Math.random() < 0.10){
+        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
         disableButton();
-    } else if (elapsedTime >= 50 && elapsedTime <= 55 && Math.random() < 0.10){
-        timerElement.textContent = elapsedTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + elapsedTime.toFixed(2) + 'x \n');        
+    } else if (displayTime >= 50 && displayTime <= 55 && Math.random() < 0.10){
+        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
         disableButton();
     } else {
         requestAnimationFrame(updateTimer);
     }
 }
    
-// Exponential Timer
+// Multiplier
 function multiplier(){
     startTime = Date.now();
     crashTime = Math.floor(Math.random() *10000);
     updateTimer();
     setInterval(updateCurrentTime, 1000);
 }
-
 
 // Multiplier
 function multiplyNumber(){
@@ -67,7 +69,7 @@ function multiplyNumber(){
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
 
-    document.getElementById("earn").textContent = "You won $" + earn.toFixed(2);
+    document.getElementById("earn").textContent = "You won $" + earn.toFixed(3);
 }
 
 //Disable button
@@ -96,9 +98,3 @@ function prevCrashes(message){
     crashList.textContent = message;
     crashTrends.appendChild(crashList);
 }
-
-
-
-
-
-
