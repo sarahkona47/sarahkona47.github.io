@@ -1,22 +1,22 @@
 // Declare Variables
-const previous_crashes = [];
+const previousCrashes = [];
+const intervals = [];
 
 // const earnElement = document.getElementById("earn");
 const numberInput = document.getElementById("numberInput");
 const timerElement = document.getElementById("timer");
 
 // Probability
-const probability_ranges = [
-    {"min_time": 2, "max_time": 5, "total_probability": 0.1},  // 2-5: 10% crash
-    {"min_time": 8, "max_time": 14, "total_probability": 0.1},  // 8-14: 10% crash
-    {"min_time": 16, "max_time": 25, "total_probability": 0.1},  // 16-25: 10% crash
-    {"min_time": 30, "max_time": 35, "total_probability": 0.1},  // 30-35: 10% crash
-    {"min_time": 40, "max_time": 45, "total_probability": 0.1},  // 40-45: 10% crash
-    {"min_time": 50, "max_time": 55, "total_probability": 0.1},  // 50-55: 10% crash
-    ];
+const probabilityRanges = [
+    { minTime: 1.00, maxTime: 1.50, totalProbability: 0.05 }, // 2.00-3.00: 10% crash
+    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.50 }, // 2.00-3.00: 10% crash
+    { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
+    { minTime: 4.00, maxTime: 5.00, totalProbability: 0.1 }, // 4.00-5.00: 10% crash
+    { minTime: 5.00, maxTime: 6.00, totalProbability: 0.07 }, // 5.00-6.00: 10% crash
+];
 
 let startTime = Date.now();
-let crashTime = Math.floor(Math.random() *10000);
+// let crashTime = Math.floor(Math.random() *10000);
 
 // Timer Update
 function updateTimer() {
@@ -24,33 +24,64 @@ function updateTimer() {
     const elapsedTime = (currentTime - startTime)/1000;
     const displayTime = (elapsedTime * 0.1) + 1
     timerElement.textContent = displayTime.toFixed(2) + 'x';
+    intervals.push(...generate_intervals(probabilityRanges));
 
-    if (displayTime >= 2 && displayTime <= 5 && Math.random() < 0.10) {
+    if (displayTime >= intervals[0]) {
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
         prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
         disableButton();
-    } else if (displayTime >= 8 && displayTime <= 14 && Math.random() < 0.10){
-        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-        disableButton();
-    } else if (displayTime >= 16 && displayTime <= 25 && Math.random() < 0.10){
-        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-        disableButton();
-    } else if (displayTime >= 30 && displayTime <= 35 && Math.random() < 0.10){
-        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
-        disableButton();
-    } else if (displayTime >= 40 && displayTime <= 45 && Math.random() < 0.10){
-        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
-        disableButton();
-    } else if (displayTime >= 50 && displayTime <= 55 && Math.random() < 0.10){
-        timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-        disableButton();
-    } else {
+        intervals.length = 0;
+    } else{
         requestAnimationFrame(updateTimer);
+    }
+    
+
+    // if (displayTime >= 2 && displayTime <= 5 && Math.random() < generatedIntervals) {
+    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
+    //     disableButton();
+    // } else if (displayTime >= 8 && displayTime <= 14 && Math.random() < generatedIntervals){
+    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
+    //     disableButton();
+    // } else if (displayTime >= 16 && displayTime <= 25 && Math.random() < generatedIntervals){
+    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
+    //     disableButton();
+    // } else if (displayTime >= 30 && displayTime <= 35 && Math.random() < generatedIntervals){
+    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
+    //     disableButton();
+    // } else if (displayTime >= 40 && displayTime <= 45 && Math.random() < generatedIntervals){
+    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
+    //     disableButton();
+    // } else if (displayTime >= 50 && displayTime <= 55 && Math.random() < generatedIntervals){
+    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
+    //     disableButton();
+}
+
+function generate_intervals(probabilityRange){
+    const intervals = [];
+    probabilityRange.forEach(rangeInfo => {
+        const minTime = rangeInfo.minTime;
+        const maxTime = rangeInfo.maxTime;
+        const totalProbability = rangeInfo.totalProbability;
+        // Calculate the number of intervals based on the total probability
+        const numIntervalsInRange = Math.round(totalProbability * 100); // Assuming probabilities as percentages
+        for (let i = 0; i < numIntervalsInRange; i++) {
+            intervals.push(Number((Math.random() * (maxTime - minTime) + minTime).toFixed(2)));
+        }
+    });
+    shuffleArray(intervals); // Shuffle the intervals to randomize their order
+    return intervals;
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
    
@@ -69,7 +100,7 @@ function multiplyNumber(){
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
 
-    document.getElementById("earn").textContent = "You won $" + earn.toFixed(3);
+    document.getElementById("earn").textContent = "You won $" + earn.toFixed(2);
 }
 
 //Disable button
@@ -92,7 +123,7 @@ function enableButton(){
 
 //Previous Crashes
 function prevCrashes(message){
-    previous_crashes.push(message);
+    previousCrashes.push(message);
     const crashTrends = document.getElementById('trends');
     const crashList = document.createElement('li');
     crashList.textContent = message;
