@@ -8,11 +8,11 @@ const timerElement = document.getElementById("timer");
 
 // Probability
 const probabilityRanges = [
-    { minTime: 1.00, maxTime: 1.50, totalProbability: 0.05 }, // 2.00-3.00: 10% crash
-    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.50 }, // 2.00-3.00: 10% crash
+    { minTime: 1.00, maxTime: 1.50, totalProbability: 0.05 }, // 2.00-3.00: 5% crash
+    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.1 }, // 2.00-3.00: 10% crash
     { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
     { minTime: 4.00, maxTime: 5.00, totalProbability: 0.1 }, // 4.00-5.00: 10% crash
-    { minTime: 5.00, maxTime: 6.00, totalProbability: 0.07 }, // 5.00-6.00: 10% crash
+    { minTime: 5.00, maxTime: 6.00, totalProbability: 0.07 }, // 5.00-6.00: 7% crash
 ];
 
 let startTime = Date.now();
@@ -34,32 +34,6 @@ function updateTimer() {
     } else{
         requestAnimationFrame(updateTimer);
     }
-    
-
-    // if (displayTime >= 2 && displayTime <= 5 && Math.random() < generatedIntervals) {
-    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-    //     disableButton();
-    // } else if (displayTime >= 8 && displayTime <= 14 && Math.random() < generatedIntervals){
-    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-    //     disableButton();
-    // } else if (displayTime >= 16 && displayTime <= 25 && Math.random() < generatedIntervals){
-    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-    //     disableButton();
-    // } else if (displayTime >= 30 && displayTime <= 35 && Math.random() < generatedIntervals){
-    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
-    //     disableButton();
-    // } else if (displayTime >= 40 && displayTime <= 45 && Math.random() < generatedIntervals){
-    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');                
-    //     disableButton();
-    // } else if (displayTime >= 50 && displayTime <= 55 && Math.random() < generatedIntervals){
-    //     timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-    //     prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-    //     disableButton();
 }
 
 function generate_intervals(probabilityRange){
@@ -100,7 +74,7 @@ function multiplyNumber(){
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
 
-    document.getElementById("earn").textContent = "You won $" + earn.toFixed(2);
+    document.getElementById("earn").textContent = "You won $" + earn.toFixed(2) + "!";
 }
 
 //Disable button
