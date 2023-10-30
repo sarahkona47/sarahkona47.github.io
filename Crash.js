@@ -27,13 +27,20 @@ function updateTimer() {
     intervals.push(...generate_intervals(probabilityRanges));
 
     if (displayTime >= intervals[0]) {
+        disableButton();
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
         prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
-        disableButton();
+        enableButton();
         intervals.length = 0;
     } else{
         requestAnimationFrame(updateTimer);
     }
+
+    // if (previousCrashes != 0) {
+    //     disableBetButton();
+    // } 
+
+    
 }
 
 function generate_intervals(probabilityRange){
@@ -79,11 +86,16 @@ function multiplyNumber(){
 
 //Disable button
 function disableButton(){
-    // const betButton = document.getElementById("bet");
+    const betButton = document.getElementById("bet");
     const cashoutButton = document.getElementById("cashout");
 
     betButton.disabled = true;
     cashoutButton.disabled = true;
+}
+
+function disableBetButton() {
+    const betButton = document.getElementById("bet");
+    betButton.disabled = true;
 }
 
 //Enable button
