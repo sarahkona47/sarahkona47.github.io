@@ -73,13 +73,13 @@ function multiplyNumber(){
     const parsedNumber = parseFloat(numberInput);
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
-
+    
     document.getElementById("earn").textContent = "You won $" + earn.toFixed(2) + "!";
 }
 
 //Disable button
 function disableButton(){
-    const betButton = document.getElementById("bet");
+    // const betButton = document.getElementById("bet");
     const cashoutButton = document.getElementById("cashout");
 
     betButton.disabled = true;
@@ -102,4 +102,30 @@ function prevCrashes(message){
     const crashList = document.createElement('li');
     crashList.textContent = message;
     crashTrends.appendChild(crashList);
+}
+
+class BankBalance {
+    balance(balance) {
+        this.balance = balance;
+    }
+    deposit(amount) {
+        this.balance += amount;
+    }
+    withdraw(amount) {
+        if (amount <= this.balance) {
+            this.balance -= amount;
+        } else {
+            console.log('Insufficient Balance');
+        }
+    }
+    updateBetBalance(numberInput) {
+        if (numberInput <= this.balance) {
+            this.balance -= amount;
+        } else {
+            console.log('Insufficient Balance');
+        }
+    }
+    updateWinBalance(earn) {
+        this.balance += earn;
+    }
 }
