@@ -1,7 +1,7 @@
 h1 {
     color: purple
 }
-*{ 
+* { 
     margin: 0;
     padding: 0;
     font-family: 'Courier New', sans-serif;
@@ -42,12 +42,11 @@ body {
 }
 
 .box-wrapper {
-    height: 90vh;
-    width: 95%;
     display: flex;
     flex-direction: column;
     text-align: center;
     position: relative;
+    box-sizing: border-box
 }
 
 #box2 {
