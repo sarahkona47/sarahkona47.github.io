@@ -1,4 +1,4 @@
-## Purple Rice
-# Crash Gambling Simulator 
+# Purple Rice
+## Crash Gambling Simulator 
 Bet your money and watch it multiply
-Cash out before the multiplier crashes
+/n Cash out before the multiplier crashes
