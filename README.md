@@ -17,7 +17,7 @@ Users are able to play the game at this link: https://sarahkona47.github.io./
 ### Rules
 The rules of the game are simple. 
 - Bet your money and watch it multiply!
-- Cash out before the multiplier crashes; if not you will your bet! 
+- Cash out before the multiplier crashes; if not you will lose your bet! 
 
 ### Features
 Users may also utilize the previous crash history trends and the rage button to release some stress when things aren't going the way you expected! 
