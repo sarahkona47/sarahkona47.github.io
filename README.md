@@ -1,11 +1,11 @@
 # Purple Rice Gambling Simulator
 
 Authors: Sarah Choi, Eunice Lim, Daniel Seo \
-COMP 225: Software Development
+COMP 225: Software Development and Design
 
 ## Vision
-Bet your money and watch it multiply
-Cash out before the multiplier crashes
+Experience the addictive world of gambling through our Crash simulator! Bet your money and watch it multiply <br />
+Cash out before the multiplier crashes <br />
 
 ## How to Play
 

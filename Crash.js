@@ -1,6 +1,7 @@
 // Declare Variables
 const previousCrashes = [];
 const intervals = [];
+let startingBalance = 1000;
 
 // const earnElement = document.getElementById("earn");
 const numberInput = document.getElementById("numberInput");
@@ -19,7 +20,6 @@ const probabilityRanges = [
 ]
 
 let startTime = Date.now();
-// let crashTime = Math.floor(Math.random() *10000);
 
 // Timer Update
 function updateTimer() {
@@ -32,6 +32,7 @@ function updateTimer() {
     if (displayTime >= intervals[0]) {
         disableButton();
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+        enableButton();
         prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
         enableButton();
         intervals.length = 0;
@@ -89,25 +90,23 @@ function multiplyNumber(){
 
 //Disable button
 function disableButton(){
-    const betButton = document.getElementById("bet");
     const cashoutButton = document.getElementById("cashout");
-
-    betButton.disabled = true;
+    const betButton = document.getElementById("bet");
     cashoutButton.disabled = true;
+    betButton.disabled = true;
 }
 
-function disableBetButton() {
+function disableBetButton(){
     const betButton = document.getElementById("bet");
     betButton.disabled = true;
 }
 
 //Enable button
 function enableButton(){
-    betButton = document.getElementById("bet");
-    cashoutButton = document.getElementById("cashout");
-    
-    betButton.disabled = false;
-    cashoutButton.disabled = false;
+   const betButton = document.getElementById("bet");
+   const cashoutButton = document.getElementById("cashout");
+   betButton.disabled = false;
+   cashoutButton.disabled = false;
 }
 
 //Previous Crashes
