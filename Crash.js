@@ -9,11 +9,14 @@ const timerElement = document.getElementById("timer");
 // Probability
 const probabilityRanges = [
     { minTime: 1.00, maxTime: 1.50, totalProbability: 0.05 }, // 2.00-3.00: 5% crash
-    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.1 }, // 2.00-3.00: 10% crash
+    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.2 }, // 2.00-3.00: 20% crash
     { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
-    { minTime: 4.00, maxTime: 5.00, totalProbability: 0.1 }, // 4.00-5.00: 10% crash
-    { minTime: 5.00, maxTime: 6.00, totalProbability: 0.07 }, // 5.00-6.00: 7% crash
-];
+    { minTime: 4.00, maxTime: 5.00, totalProbability: 0.08 }, // 4.00-5.00: 8% crash
+    { minTime: 5.00, maxTime: 6.00, totalProbability: 0.05 }, // 5.00-6.00: 5% crash
+    // { minTime: 6.00, maxTime: 9.00, totalProbability: 0.05 }, // 6.00-9.00: 5% crash
+    // { minTime: 9.00, maxTime: 15.00, totalProbability: 0.02 }, // 9.00-15.00: 2% crash
+    // { minTime: 15.00, maxTime: 100.00, totalProbability: 0.01 }, // 15.00-100.00: 1% crash
+]
 
 let startTime = Date.now();
 // let crashTime = Math.floor(Math.random() *10000);
