@@ -23,12 +23,16 @@ let startTime = Date.now();
 
 // Timer Update
 function updateTimer() {
+    // const possibleWinVisual = displayTime * numberInput;
     const currentTime = Date.now();
     const elapsedTime = (currentTime - startTime)/1000;
     const displayTime = (elapsedTime * 0.1) + 1
-    timerElement.textContent = displayTime.toFixed(2) + 'x';
-    intervals.push(...generate_intervals(probabilityRanges));
 
+    
+    timerElement.textContent = displayTime.toFixed(2) + 'x';
+    updateWinnableAmount();
+    // timerElement.winVisual = '$ ' + possibleWinVisual.toFixed(2);
+    intervals.push(...generate_intervals(probabilityRanges));
     if (displayTime >= intervals[0]) {
         disableButton();
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
@@ -39,13 +43,25 @@ function updateTimer() {
     } else{
         requestAnimationFrame(updateTimer);
     }
-
-    // if (previousCrashes != 0) {
-    //     disableBetButton();
-    // } 
-
-    
 }
+
+function updateWinnableAmount() {
+    const numberInput = parseFloat(document.getElementById("numberInput").value);
+    const displayTime = parseFloat(timerElement.textContent);
+    const winnableAmount = numberInput * displayTime;
+
+    // Update the winnable amount in the UI
+    document.getElementById("winnableAmount").textContent = "$" + winnableAmount.toFixed(2);
+}
+
+
+// // Shows a visual of 
+// function visibleMultiplier() {
+    
+//     if (displayTime >= intervals[0]){
+//         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
+//     }
+// }
 
 function generate_intervals(probabilityRange){
     const intervals = [];
@@ -63,6 +79,8 @@ function generate_intervals(probabilityRange){
     return intervals;
 }
 
+
+// Generates randomness between arrays of probability
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -78,7 +96,7 @@ function multiplier(){
     setInterval(updateCurrentTime, 1000);
 }
 
-// Multiplier
+// Multiply bet and win multiplier - static 
 function multiplyNumber(){
     const numberInput = document.getElementById("numberInput").value;
     const parsedNumber = parseFloat(numberInput);
@@ -88,6 +106,8 @@ function multiplyNumber(){
     document.getElementById("earn").textContent = "You won $" + earn.toFixed(2) + "!";
 }
 
+
+
 //Disable button
 function disableButton(){
     const cashoutButton = document.getElementById("cashout");
@@ -96,10 +116,10 @@ function disableButton(){
     betButton.disabled = true;
 }
 
-function disableBetButton(){
-    const betButton = document.getElementById("bet");
-    betButton.disabled = true;
-}
+// function disableBetButton(){
+//     const betButton = document.getElementById("bet");
+//     betButton.disabled = true;
+// }
 
 //Enable button
 function enableButton(){

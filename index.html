@@ -26,12 +26,13 @@
     <div class="box-wrapper">
             <div id="box4">
                 Play Game
-                <p>Enter a number:</p>
+                <p>Enter a number:</p> 
                 <input type="text" id="numberInput">
                 <button id="bet" onclick="multiplier(); disableBetButton()">Bet</button>
                 <button id="cashout" onclick="multiplyNumber(); disableButton()">CASH OUT</button>
                 <p id="earn"></p>
                 <div id="timer">0</div>
+                <p>Winnable Amount: <span id="winnableAmount">$0.00</span></p>
                 <marquee behavior="alternate" scrollamount="30">
                     <marquee behavior="alternate" scrollamount="30" direction="down">
                         <img src="images/chicken.png" height = 100 width = 100 >
