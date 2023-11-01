@@ -1,6 +1,7 @@
 // Declare Variables
 const previousCrashes = [];
 const intervals = [];
+let startingBalance = 1000;
 
 // const earnElement = document.getElementById("earn");
 const numberInput = document.getElementById("numberInput");
