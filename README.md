@@ -1,6 +1,7 @@
 # Purple Rice Gambling Simulator
 
 Authors: Sarah Choi, Eunice Lim, Daniel Seo \
+\
 COMP 225: Software Development and Design
 
 ## Vision
