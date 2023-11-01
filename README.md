@@ -3,7 +3,8 @@
 Authors: Sarah Choi, Eunice Lim, Daniel Seo \
 \
 COMP 225: Software Development and Design
-
+\
+PICTURE OF THE GAME WILL GO HERE
 ## Vision
 “Gambling made simple and easy, without consequences!"\
 \
