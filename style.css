@@ -52,23 +52,21 @@ body {
     border: solid 1px rgb(136, 0, 255);
 }
 
-#balancebox{
-    height: 2px;
-}
-
 #histbox{
+    flex-grow: 1;
     height: 20px;
     overflow: scroll;
 }
 
+
 .right-column {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     display: flex;
     flex-direction: column;
 }
 
 .right-column div {
-    flex-grow: 1;
+    /* flex-grow: 1;  */
     margin: 0 8px;
     border: solid 1px rgb(136, 0, 255);
 }
