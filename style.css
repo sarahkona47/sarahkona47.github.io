@@ -38,7 +38,6 @@ h1 {
 body {
     margin: 2%;
     justify-content: center;
-    overflow: scroll;
 }
 
 
@@ -48,31 +47,40 @@ body {
 }
 
 
-#box4 {
+#gamebox {
     flex-grow: 1;
-    border: solid 1px orange
+    border: solid 1px rgb(136, 0, 255);
 }
 
-.middle-column {
+#balancebox{
+    height: 2px;
+}
+
+#histbox{
+    height: 20px;
+    overflow: scroll;
+}
+
+.right-column {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.middle-column div {
+.right-column div {
     flex-grow: 1;
     margin: 0 8px;
-    border: solid 1px red;
+    border: solid 1px rgb(136, 0, 255);
 }
 
-.middle-column div+div {
+.right-column div+div {
     margin-top: 8px
 }
 
 marquee{
     position: relative;
     z-index: 9999;
-    height: 72vh;
+    height: 70vh;
     width: 100%;
 }
 

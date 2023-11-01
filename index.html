@@ -16,7 +16,6 @@
                 <img class= "logo" src="images/logo.png" position= left  height =80 width = 80></a>
         </div>
         <div class="navbar__all">
-            <a href="/" class="navbar__about">About Us</a>
             <a onclick="enableButton()" class="navbar__restart">Restart</a>
             <a href="/" class="navbar__withdraw">Withdraw</a>
             <a href="/" class="navbar__deposit">Deposit</a>
@@ -24,10 +23,10 @@
     </nav> 
 
     <div class="box-wrapper">
-            <div id="box4">
+            <div id="gamebox">
                 Play Game
-                <p>Enter a number:</p>
-                <input type="text" id="numberInput">
+                </br>
+                <input type="value" id="numberInput" placeholder = "Place your bet">
                 <button id="bet" onclick="multiplier(); disableBetButton()">Bet</button>
                 <button id="cashout" onclick="multiplyNumber(); disableButton()">CASH OUT</button>
                 <p id="earn"></p>
@@ -40,14 +39,18 @@
                 <script src="Crash.js"></script>
             </div>
 
-            <div class="middle-column">
-                <div id="box5">
+            <div class="right-column">
+                <div id="balancebox">
+                    <p> Your balance:
+                    </p>
+                </div>
+                <div id="histbox">
                     History
                     <br>
                     <u1 id="trends">
                     </u1>
                 </div>
-                <div id="box6">
+                <div id="ragebox">
                     Rage Button
                     <br>
                     <button id="rageButton">
