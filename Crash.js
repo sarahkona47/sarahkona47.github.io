@@ -7,7 +7,8 @@ let startingBalance = 1000;
 const numberInput = document.getElementById("numberInput");
 const timerElement = document.getElementById("timer");
 
-// Probability
+
+// Probability ranges used by generate_intervals
 const probabilityRanges = [
     { minTime: 1.00, maxTime: 1.50, totalProbability: 0.05 }, // 2.00-3.00: 5% crash
     { minTime: 1.50, maxTime: 2.10, totalProbability: 0.2 }, // 2.00-3.00: 20% crash
@@ -21,9 +22,8 @@ const probabilityRanges = [
 
 let startTime = Date.now();
 
-// Timer Update
+// Timer visual updates for the crash multiplier as well as the winnable amount. Enables/disables buttons after a bet
 function updateTimer() {
-    // const possibleWinVisual = displayTime * numberInput;
     const currentTime = Date.now();
     const elapsedTime = (currentTime - startTime)/1000;
     const displayTime = (elapsedTime * 0.1) + 1
@@ -31,7 +31,6 @@ function updateTimer() {
     
     timerElement.textContent = displayTime.toFixed(2) + 'x';
     updateWinnableAmount();
-    // timerElement.winVisual = '$ ' + possibleWinVisual.toFixed(2);
     intervals.push(...generate_intervals(probabilityRanges));
     if (displayTime >= intervals[0]) {
         disableButton();
@@ -45,23 +44,17 @@ function updateTimer() {
     }
 }
 
+
+// Shows possible profits on screen 
 function updateWinnableAmount() {
     const numberInput = parseFloat(document.getElementById("numberInput").value);
     const displayTime = parseFloat(timerElement.textContent);
     const winnableAmount = numberInput * displayTime;
-
     // Update the winnable amount in the UI
     document.getElementById("winnableAmount").textContent = "$" + winnableAmount.toFixed(2);
 }
 
-
-// // Shows a visual of 
-// function visibleMultiplier() {
-    
-//     if (displayTime >= intervals[0]){
-//         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-//     }
-// }
+//** Generate different intervals based on fixed probability ranges defined as probabilityRanges above */ 
 
 function generate_intervals(probabilityRange){
     const intervals = [];
@@ -80,7 +73,7 @@ function generate_intervals(probabilityRange){
 }
 
 
-// Generates randomness between arrays of probability
+//** Called in generate_intervals for randomization */
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -102,11 +95,8 @@ function multiplyNumber(){
     const parsedNumber = parseFloat(numberInput);
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
-    
     document.getElementById("earn").textContent = "You won $" + earn.toFixed(2) + "!";
 }
-
-
 
 //Disable button
 function disableButton(){
@@ -115,11 +105,6 @@ function disableButton(){
     cashoutButton.disabled = true;
     betButton.disabled = true;
 }
-
-// function disableBetButton(){
-//     const betButton = document.getElementById("bet");
-//     betButton.disabled = true;
-// }
 
 //Enable button
 function enableButton(){
@@ -138,7 +123,11 @@ function prevCrashes(message){
     crashTrends.appendChild(crashList);
 }
 
+
 class BankBalance {
+
+    startBalance = 1000;
+
     balance(balance) {
         this.balance = balance;
     }
