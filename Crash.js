@@ -1,7 +1,8 @@
 // Declare Variables
-const previousCrashes = [];
+var previousCrashes = [];
 const intervals = [];
-let startingBalance = 1000;
+const startBalance = 1000;
+var currentBalance = 1000;
 
 // const earnElement = document.getElementById("earn");
 const numberInput = document.getElementById("numberInput");
@@ -28,7 +29,6 @@ function updateTimer() {
     const elapsedTime = (currentTime - startTime)/1000;
     const displayTime = (elapsedTime * 0.1) + 1
 
-    
     timerElement.textContent = displayTime.toFixed(2) + 'x';
     updateWinnableAmount();
     intervals.push(...generate_intervals(probabilityRanges));
@@ -85,17 +85,26 @@ function shuffleArray(array) {
 function multiplier(){
     startTime = Date.now();
     crashTime = Math.floor(Math.random() *10000);
-    updateTimer();
-    setInterval(updateCurrentTime, 1000);
+    const numberInput = parseFloat(document.getElementById("numberInput").value);
+
+    if (numberInput <= currentBalance){
+        updateTimer();
+        setInterval(updateCurrentTime, 1000);
+    }
+    else{
+        document.getElementById("earn").textContent = "Only bet what you have!";
+    }
 }
 
 // Multiply bet and win multiplier - static 
-function multiplyNumber(){
+function winAmount(){
     const numberInput = document.getElementById("numberInput").value;
     const parsedNumber = parseFloat(numberInput);
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
+    updateBalance(earn);
     document.getElementById("earn").textContent = "You won $" + earn.toFixed(2) + "!";
+
 }
 
 //Disable button
@@ -123,32 +132,34 @@ function prevCrashes(message){
     crashTrends.appendChild(crashList);
 }
 
-
-class BankBalance {
-
-    startBalance = 1000;
-
-    balance(balance) {
-        this.balance = balance;
-    }
-    deposit(amount) {
-        this.balance += amount;
-    }
-    withdraw(amount) {
-        if (amount <= this.balance) {
-            this.balance -= amount;
-        } else {
-            console.log('Insufficient Balance');
-        }
-    }
-    updateBetBalance(numberInput) {
-        if (numberInput <= this.balance) {
-            this.balance -= amount;
-        } else {
-            console.log('Insufficient Balance');
-        }
-    }
-    updateWinBalance(earn) {
-        this.balance += earn;
-    }
+function updateBalance(amount){
+    currentBalance = parseFloat(amount + startBalance);
+    document.getElementById("myBalance").textContent = currentBalance;
 }
+
+    // startBalance = 1000;
+
+    // balance(balance) {
+        // this.balance = balance;
+    // }
+    // deposit(amount) {
+    //     this.balance += amount;
+    // }
+    // withdraw(amount) {
+    //     if (amount <= this.balance) {
+    //         this.balance -= amount;
+    //     } else {
+    //         console.log('Insufficient Balance');
+    //     }
+    // }
+    // updateBetBalance(numberInput) {
+    //     if (numberInput <= this.balance) {
+    //         this.balance -= amount;
+    //     } else {
+    //         console.log('Insufficient Balance');
+    //     }
+    // }
+    // updateWinBalance(earn) {
+    //     this.balance += earn;
+    // }
+
