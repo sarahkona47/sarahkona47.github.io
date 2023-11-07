@@ -80,13 +80,32 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+// need to add in a function that validates input type WORK IN PROGRESS
+function validateInput() {
+    const numberInput = document.getElementById("numberInput");
+
+    numberInput.addEventListener("bet", function(event) {
+        const inputValue = event.target.value;
+        const regex = /\$?\d+(,\d{3})*(\.\d{2})?$/; // Regular expression to match up to two decimal points
+        if (!regex.test(inputValue)) {
+            // If the input does not match the pattern, clear the input field or handle the error accordingly
+            event.target.value = inputValue.slice(0, -1); // Remove the last character (invalid input)
+            // You can also show an error message to the user if needed
+            // For example: errorElement.textContent = "Please enter a number with up to two decimal points";
+        }
+        else {
+            return numberInput; 
+        }
+    });
+}
    
 // Multiplier
 function multiplier(){
     startTime = Date.now();
     crashTime = Math.floor(Math.random() *10000);
     const numberInput = parseFloat(document.getElementById("numberInput").value);
-
+    // we need to add the validation function here - validateInput();
     if (numberInput <= currentBalance){
         updateTimer();
         setInterval(updateCurrentTime, 1000);
@@ -107,12 +126,18 @@ function winAmount(){
 
 }
 
+// Need a function to reset all the text when a bet is finished
+function reset() {
+
+}
+
 //Disable button
 function disableButton(){
     const cashoutButton = document.getElementById("cashout");
     const betButton = document.getElementById("bet");
     cashoutButton.disabled = true;
     betButton.disabled = true;
+    numberInput.disabled = true; 
 }
 
 //Enable button
@@ -121,6 +146,8 @@ function enableButton(){
    const cashoutButton = document.getElementById("cashout");
    betButton.disabled = false;
    cashoutButton.disabled = false;
+   numberInput.disabled = false; 
+
 }
 
 //Previous Crashes

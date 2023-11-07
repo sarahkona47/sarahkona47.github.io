@@ -49,6 +49,25 @@ body {
     border: solid 1px rgb(136, 0, 255);
 }
 
+#numberInput {
+    font-size: larger;
+}
+
+#winnableAmount {
+    font-size: x-large;
+}
+
+#timer {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+
+#chickencoop {
+    flex-grow: 1;
+    border:solid 1px rgb(136, 0, 255);
+}
+
 #histbox{
     flex-grow: 1;
     height: 20px;
