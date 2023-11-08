@@ -24,7 +24,7 @@ const probabilityRanges = [
 let startTime = Date.now();
 
 // Timer visual updates for the crash multiplier as well as the winnable amount. Enables/disables buttons after a bet
-function updateTimer() {
+function updateTimer() { // generate crash probability 
     const currentTime = Date.now();
     const elapsedTime = (currentTime - startTime)/1000;
     const displayTime = (elapsedTime * 0.1) + 1
@@ -100,7 +100,7 @@ function validateInput() {
     });
 }
    
-// Multiplier
+// Multiplier display
 function multiplier(){
     startTime = Date.now();
     crashTime = Math.floor(Math.random() *10000);
