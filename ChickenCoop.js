@@ -1,8 +1,13 @@
-starting chicken = 1 chicken;
-totalchickens= update total chicken; 
+startingchicken = 1 chicken;
+totalchickens= 1 + update total chicken; 
 chickenValue = 500?
 
-function buy chicken{
+function popup window(){
+    show popup window with chicken store;
+    buy and sell chickens here;
+}
+
+function buychicken{
     if (bankbalance > chickenValue){
         buy chicken
         totalchickens =+ 1
@@ -13,17 +18,19 @@ function buy chicken{
     }
 }
 
-function sell chicken{
+function sellchicken{
     if (totalchickens >=1) {
         totalchickens =-1
         currentBalance += chickenValue
     }
     
-    if (totalchickens <1){
+    else {
         message "you don't have any chickens to sell"
+        currentBalance = currentBalance;
     }
 }
 
 function chickencoop{
     display on screen totalchickens bouncing around
 }
+

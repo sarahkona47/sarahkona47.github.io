@@ -16,7 +16,7 @@
                 <img class="logo" src="images/logo.png" position=left  height=80 width=80></a>
         </div>
         <div class="navbar__all">
-            <button onclick="enableButton()" class="navbar__restart" type="button">Restart</button>
+            <!-- <button onclick="enableButton()" class="navbar__restart" type="button">Restart</button> -->
             <button class="navbar__withdraw" type="button">Sell Chicken</button>
             <button class="navbar__deposit" type="button">Buy Chicken</button>
             <p class="balance">Bank Balance: <span id="myBalance">$1000.00</span></p>
@@ -41,7 +41,7 @@
                 <p>You could have won: <span id="winnableAmount">$0.00</span></p>
                 <br>
             </div>
-            <script src="Crash.js"></script>
+            <script src="Crash.js", ></script>
 
             <div id="chickencoop">
                 <br>
@@ -62,11 +62,12 @@
                     </u1>
                 </div>
                 <div id="ragebox">
-                    <button id="rageButton">
-                        <img src="images/angryemoji-purple.png" height = 200 width = 200>
+                    <button onclick="pictureChange()">
+                        <img id="rageButton" src="images/angryemoji-purple.png" height = 200 width = 200>
                     </button>
                 </div>
             </div>
+            <script src="Rage.js"></script>
     </div>
 </head>
 
