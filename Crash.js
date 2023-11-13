@@ -4,18 +4,20 @@ const intervals = [];
 const startBalance = 1000;
 var currentBalance = 1000;
 
-// const earnElement = document.getElementById("earn");
 const numberInput = document.getElementById("numberInput");
 const timerElement = document.getElementById("timer");
+// var parsedNumber = parseFloat(numberInput);
 
+const cashoutButton = document.getElementById("cashout");
+const betButton = document.getElementById("bet");
 
 // Probability ranges used by generate_intervals
 const probabilityRanges = [
     { minTime: 1.00, maxTime: 1.50, totalProbability: 0.05 }, // 2.00-3.00: 5% crash
     { minTime: 1.50, maxTime: 2.10, totalProbability: 0.2 }, // 2.00-3.00: 20% crash
-    { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
-    { minTime: 4.00, maxTime: 5.00, totalProbability: 0.08 }, // 4.00-5.00: 8% crash
-    { minTime: 5.00, maxTime: 6.00, totalProbability: 0.05 }, // 5.00-6.00: 5% crash
+    // { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
+    // { minTime: 4.00, maxTime: 5.00, totalProbability: 0.08 }, // 4.00-5.00: 8% crash
+    // { minTime: 5.00, maxTime: 6.00, totalProbability: 0.05 }, // 5.00-6.00: 5% crash
     // { minTime: 6.00, maxTime: 9.00, totalProbability: 0.05 }, // 6.00-9.00: 5% crash
     // { minTime: 9.00, maxTime: 15.00, totalProbability: 0.02 }, // 9.00-15.00: 2% crash
     // { minTime: 15.00, maxTime: 100.00, totalProbability: 0.01 }, // 15.00-100.00: 1% crash
@@ -23,8 +25,8 @@ const probabilityRanges = [
 
 let startTime = Date.now();
 
-// Timer visual updates for the crash multiplier as well as the winnable amount. Enables/disables buttons after a bet
-function updateTimer() { // generate crash probability 
+// Timer visual updates for the crash multiplier as well as the winnable amount; enables/disables buttons after a bet; updates bank balanace
+function updateTimer() {
     const currentTime = Date.now();
     const elapsedTime = (currentTime - startTime)/1000;
     const displayTime = (elapsedTime * 0.1) + 1
@@ -33,17 +35,17 @@ function updateTimer() { // generate crash probability
     updateWinnableAmount();
     intervals.push(...generate_intervals(probabilityRanges));
     if (displayTime >= intervals[0]) {
-        disableButton();
+        // disableButton();
+        deductFromBalance();
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-        enableButton();
-        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n');        
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n'); 
         enableButton();
         intervals.length = 0;
+        reset(numberInput);
     } else{
         requestAnimationFrame(updateTimer);
     }
 }
-
 
 // Shows possible profits on screen 
 function updateWinnableAmount() {
@@ -72,7 +74,6 @@ function generate_intervals(probabilityRange){
     return intervals;
 }
 
-
 //** Called in generate_intervals for randomization */
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -90,6 +91,7 @@ function validateInput() {
         const regex = /\$?\d+(,\d{3})*(\.\d{2})?$/; // Regular expression to match up to two decimal points
         if (!regex.test(inputValue)) {
             // If the input does not match the pattern, clear the input field or handle the error accordingly
+            document.getElementById("numberInput").textContent = " ";
             event.target.value = inputValue.slice(0, -1); // Remove the last character (invalid input)
             // You can also show an error message to the user if needed
             // For example: errorElement.textContent = "Please enter a number with up to two decimal points";
@@ -99,14 +101,25 @@ function validateInput() {
         }
     });
 }
+
+// Makes sure that bet amount is less than bank balance
+function checkBetAmount(){
+    const numberInput = parseFloat(document.getElementById("numberInput").value);
+    if (numberInput <= currentBalance){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
    
-// Multiplier display
+// Start multiplier 
 function multiplier(){
     startTime = Date.now();
     crashTime = Math.floor(Math.random() *10000);
     const numberInput = parseFloat(document.getElementById("numberInput").value);
     // we need to add the validation function here - validateInput();
-    if (numberInput <= currentBalance){
+    if (checkBetAmount()){
         updateTimer();
         setInterval(updateCurrentTime, 1000);
     }
@@ -114,6 +127,7 @@ function multiplier(){
         document.getElementById("earn").textContent = "Only bet what you have!";
     }
 }
+  
 
 // Multiply bet and win multiplier - static 
 function winAmount(){
@@ -121,33 +135,42 @@ function winAmount(){
     const parsedNumber = parseFloat(numberInput);
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
-    updateBalance(earn);
     document.getElementById("earn").textContent = "You won $" + earn.toFixed(2) + "!";
-
 }
 
 // Need a function to reset all the text when a bet is finished
-function reset() {
-
+function reset(target) {
+    target.value = "";
 }
 
-//Disable button
+//Disable all button
 function disableButton(){
     const cashoutButton = document.getElementById("cashout");
     const betButton = document.getElementById("bet");
+
     cashoutButton.disabled = true;
     betButton.disabled = true;
     numberInput.disabled = true; 
 }
 
+//Check if select button is disabled
+function checkDisabled(button){
+    if (button.disabled === true){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 //Enable button
 function enableButton(){
-   const betButton = document.getElementById("bet");
-   const cashoutButton = document.getElementById("cashout");
-   betButton.disabled = false;
-   cashoutButton.disabled = false;
-   numberInput.disabled = false; 
+    const cashoutButton = document.getElementById("cashout");
+    const betButton = document.getElementById("bet");
 
+    betButton.disabled = false;
+    cashoutButton.disabled = false;
+    numberInput.disabled = false; 
 }
 
 //Previous Crashes
@@ -159,34 +182,34 @@ function prevCrashes(message){
     crashTrends.appendChild(crashList);
 }
 
-function updateBalance(amount){
-    currentBalance = parseFloat(amount + startBalance);
-    document.getElementById("myBalance").textContent = currentBalance;
+// If cashout button is clicked, add earned money to bank balance 
+function addToBalance(){
+    const numberInput = document.getElementById("numberInput").value;
+    const parsedNumber = parseFloat(numberInput);
+    const currentTimestamp = parseFloat(timerElement.textContent);
+    const earn = parsedNumber * currentTimestamp;
+
+    currentBalance = parseFloat(currentBalance+earn);
+    document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
 }
 
-    // startBalance = 1000;
+// If cashout button is still enabled (the user didn't press it), deducts lost money from bank balance
+function deductFromBalance(){
+    const numberInput = document.getElementById("numberInput").value;
+    const parsedNumber = parseFloat(numberInput);
 
-    // balance(balance) {
-        // this.balance = balance;
-    // }
-    // deposit(amount) {
-    //     this.balance += amount;
-    // }
-    // withdraw(amount) {
-    //     if (amount <= this.balance) {
-    //         this.balance -= amount;
-    //     } else {
-    //         console.log('Insufficient Balance');
-    //     }
-    // }
-    // updateBetBalance(numberInput) {
-    //     if (numberInput <= this.balance) {
-    //         this.balance -= amount;
-    //     } else {
-    //         console.log('Insufficient Balance');
-    //     }
-    // }
-    // updateWinBalance(earn) {
-    //     this.balance += earn;
-    // }
+    if (checkDisabled(cashoutButton)){
+        currentBalance = currentBalance;
+    }
+    else{
+        currentBalance = parseFloat(currentBalance-parsedNumber);
+        document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
+        if (currentBalance == 0){
+            document.getElementById("earn").textContent = "Oh no! You lost all your money! Sell a chicken to earn more!";
+        }
+        else{
+            document.getElementById("earn").textContent = "Oh no! You lost $" + parsedNumber.toFixed(2) + "!";
+        }
+    }
+}
 
