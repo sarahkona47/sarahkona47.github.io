@@ -28,6 +28,7 @@
     padding: 0 50px;
     align-items: center;
     -webkit-text-fill-color: black;
+    flex-grow: 1;
 }
 
 body {
@@ -41,10 +42,26 @@ body {
     display: flex;
 }
 
+.left-column {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+}
+
+.left-column div {
+    margin: 8 8px;
+    border: solid 1px rgb(136, 0, 255);
+}
+
+/* .left-column div+div {
+    margin-top: 8px;
+} */
+
 
 #gamebox {
     flex-grow: 1;
-    border: solid 1px rgb(136, 0, 255);
+    /* border: solid 1px rgb(136, 0, 255);  */
+    height: 400px; 
 }
 
 #numberInput {
@@ -60,26 +77,26 @@ body {
     font-weight: bold;
 }
 
-
 #chickencoop {
     flex-grow: 1;
-    border:solid 1px rgb(136, 0, 255);
+    /* border: solid 1px rgb(136, 0, 255); */
+    /* height: 150px;  */
 }
 
-#histbox{
+marquee{
+    position: relative;
+    z-index: 9999;
+    height: 200px;
+    /* width: 100%; */
     flex-grow: 1;
-    height: 20px;
 }
-
 
 .right-column {
-    /* flex-grow: 1; */
     display: flex;
     flex-direction: column;
 }
 
 .right-column div {
-    /* flex-grow: 1;  */
     margin: 0 8px;
     border: solid 1px rgb(136, 0, 255);
 }
@@ -88,15 +105,7 @@ body {
     margin-top: 8px
 }
 
-marquee{
-    position: relative;
-    z-index: 9999;
-    height: 70vh;
-    width: 100%;
+#histbox{
+    flex-grow: 1;
+    height: 20px;
 }
-
-#timer {
-    font-size: 24px;
-}
-
-  
