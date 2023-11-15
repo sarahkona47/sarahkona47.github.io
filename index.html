@@ -17,18 +17,25 @@
         </div>
         <div class="navbar__all">
             <!-- <button onclick="enableButton()" class="navbar__restart" type="button">Restart</button> -->
-            <button class="navbar__sell" type="button" onclick="sellChicken()">Sell Chicken</button>
+            <button class="navbar__sell" type="button" onclick="sellPopup()">Sell Chicken
+                <span class="sellPopupText" id="sellPopup">sell chicken</span>
+            </button>     
             <button class="navbar__buy" type="button" onclick="buyChicken()">Buy Chicken</button>
             <p class="balance">Bank Balance: <span id="myBalance">$1000.00</span></p>
+            <script src="ChickenCoop.js" ></script>
         </div> 
-        <!-- <script src="ChickenCoop.js", ></script> -->
     </nav> 
-
 
     <div class="box-wrapper">
         <div class="left-column">
             <div id="gamebox">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1>
                 Play Game
+                </h1>
                 <br>
                 <br>
                 <input type="number" step="0.01" id="numberInput" placeholder = "Place your bet">
@@ -44,6 +51,7 @@
                 <br>
             </div>
             <script src="Crash.js", ></script>
+            
 
             <div id="chickencoop">
                 <br>

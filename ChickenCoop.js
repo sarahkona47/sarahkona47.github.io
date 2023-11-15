@@ -5,10 +5,10 @@ var boughtChicken = 0;
 const totalchickens = startingChickens + boughtChicken; 
 const chickenValue = 500;
 
-function popup(){
-    show popup window with chicken store;
-    buy and sell chickens here;
-}
+function sellPopup() {
+    var popup = document.getElementById("sellPopup");
+    popup.classList.toggle("show");
+  }
 
 function buyChicken() {
     if (currentBalance > chickenValue){
