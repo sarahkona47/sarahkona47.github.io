@@ -36,7 +36,6 @@ body {
     justify-content: center;
 }
 
-
 .box-wrapper {
     text-align: center;
     display: flex;
@@ -59,7 +58,8 @@ body {
 
 
 #gamebox {
-    flex-grow: 1;
+    flex-grow: 2;
+    flex-direction: column;
     /* border: solid 1px rgb(136, 0, 255);  */
     height: 400px; 
 }
@@ -90,7 +90,7 @@ body {
 
 marquee{
     position: relative;
-    z-index: 9999;
+    /* z-index: 9999; */
     height: 200px;
     /* width: 100%; */
     flex-grow: 1;

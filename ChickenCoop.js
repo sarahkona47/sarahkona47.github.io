@@ -1,8 +1,9 @@
-startingchicken = 1 chicken;
-totalchickens= 1 + update total chicken; 
-chickenValue = 500?
+const startingChickens = 1;
+var boughtChicken = 0;
+const totalchickens = startingChickens + boughtChicken; 
+const chickenValue = 500;
 
-function popup window(){
+function popup(){
     show popup window with chicken store;
     buy and sell chickens here;
 }
