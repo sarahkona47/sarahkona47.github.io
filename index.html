@@ -17,10 +17,11 @@
         </div>
         <div class="navbar__all">
             <!-- <button onclick="enableButton()" class="navbar__restart" type="button">Restart</button> -->
-            <button class="navbar__withdraw" type="button">Sell Chicken</button>
-            <button class="navbar__deposit" type="button">Buy Chicken</button>
+            <button class="navbar__sell" type="button" onclick="sellChicken()">Sell Chicken</button>
+            <button class="navbar__buy" type="button" onclick="buyChicken()">Buy Chicken</button>
             <p class="balance">Bank Balance: <span id="myBalance">$1000.00</span></p>
         </div> 
+        <!-- <script src="ChickenCoop.js", ></script> -->
     </nav> 
 
 
@@ -64,7 +65,7 @@
                 </div>
                 <div id="ragebox">
                     <button onclick="pictureChange()">
-                        <img id="rageButton" src="images/IMG_0001.png" height = 200 width = 200>
+                        <img id="rageButton" src="images/IMG_0003.gif" height = 200 width = 200>
                     </button>
                 </div>
             </div>

@@ -213,3 +213,4 @@ function deductFromBalance(){
     }
 }
 
+// export{currentBalance}
