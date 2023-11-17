@@ -35,7 +35,7 @@ function updateTimer() {
     updateWinnableAmount();
     intervals.push(...generate_intervals(probabilityRanges));
     if (displayTime >= intervals[0]) {
-        // disableButton();
+        disableButton();
         deductFromBalance();
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
         prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n'); 
@@ -125,6 +125,7 @@ function multiplier(){
     }
     else{
         document.getElementById("earn").textContent = "Only bet what you have!";
+        enableButton();
     }
 }
   

@@ -31,7 +31,8 @@
     flex-grow: 1;
 }
 
-.navbar__sell {
+/* Popup container */
+.sellPopup {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -41,49 +42,70 @@
     user-select: none;
   }
 
-.navbar__sell .sellPopupText {
+.buyPopup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .sellPopup .sellChickenText {
     visibility: hidden;
-    width: 160px;
-    background-color: #555;
-    color: #fff;
+    width: 200px;
+    background-color: #e8c3f8;
+    color: #000000;
     text-align: center;
     border-radius: 6px;
-    padding: 8px 0;
+    padding: 100px 0;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
+    bottom: 400%;
     left: 50%;
     margin-left: -80px;
   }
 
-  /* Popup arrow */
-.navbar__sell .sellPopupText::after {
-    content: "";
+  .buyPopup .buyChickenText {
+    visibility: hidden;
+    width: 200px;
+    background-color: #e8c3f8;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 100px 0;
     position: absolute;
-    top: 100%;
+    z-index: 1;
+    bottom: 400%;
     left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    margin-left: -80px;
+  }
+  
+  /* Hide and show the popup */
+  .sellPopup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  .buyPopup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
   }
 
-.navbar__sell .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
 
 body {
     margin: 1%;
@@ -106,16 +128,16 @@ body {
     border: solid 1px rgb(136, 0, 255);
 }
 
-/* .left-column div+div {
+.left-column div+div {
     margin-top: 8px;
-} */
+}
 
 
 #gamebox {
     flex-grow: 2;
     flex-direction: column;
     /* border: solid 1px rgb(136, 0, 255);  */
-    height: 400px; 
+    height: 450px; 
 }
 
 #numberInput {
@@ -138,9 +160,12 @@ body {
 
 #chickencoop {
     flex-grow: 1;
-    /* border: solid 1px rgb(136, 0, 255); */
-    /* height: 150px;  */
-}
+    border: solid 1px rgb(136, 0, 255);
+    background-image: url("images/Untitled_Artwork.gif");
+    height: 200;
+    width: 1200;
+ }
+
 
 marquee{
     position: relative;
@@ -166,5 +191,5 @@ marquee{
 
 #histbox{
     flex-grow: 1;
-    height: 20px;
+    height: 50px;
 }
