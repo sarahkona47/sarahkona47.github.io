@@ -52,8 +52,8 @@
     user-select: none;
   }
   
-  /* The actual popup */
-  .sellPopup .sellChickenText {
+/* The actual popup */
+.sellPopup .sellChickenText {
     visibility: hidden;
     width: 200px;
     background-color: #e8c3f8;
@@ -66,43 +66,67 @@
     bottom: 400%;
     left: 50%;
     margin-left: -80px;
+    }
+
+
+.buyPopup .buyChickenText {
+    visibility: hidden;
+    width: 200px;
+    background-color: #e8c3f8;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 100px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 400%;
+    left: 50%;
+    margin-left: -80px;
+    }
+
+/* .sellPopup#sellChickenNum {
+    visibility: hidden;
+    width: 200px;
+    background-color: #e8c3f8;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 100px 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 400%;
+    left: 50%;
+    margin-left: -80px;
+    } */
+  
+/* Hide and show the popup */
+.sellPopup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+.buyPopup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
   }
 
-  .buyPopup .buyChickenText {
-    visibility: hidden;
-    width: 200px;
-    background-color: #e8c3f8;
-    color: #000000;
-    text-align: center;
-    border-radius: 6px;
-    padding: 100px 0;
+#close {
     position: absolute;
-    z-index: 1;
-    bottom: 400%;
-    left: 50%;
-    margin-left: -80px;
-  }
-  
-  /* Hide and show the popup */
-  .sellPopup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
-  
-  .buyPopup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
+    right: 0;
+    top: -1px;
+    background: #ffffff;
+    cursor: pointer;
+}
 
   /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeIn {
     from {opacity: 0;} 
     to {opacity: 1;}
   }
   
-  @keyframes fadeIn {
+@keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
   }
