@@ -5,6 +5,35 @@
     box-sizing: border-box;
 }
 
+.rules {
+    width: 300px;
+    /* height: inherit; */
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #7d3b86;
+    transform: translateY(-70vh);
+    padding: 150px 0;
+    position: absolute;
+    cursor: pointer;
+    bottom: 30%;
+    left: 30%;
+    border-radius: 6px;
+/* 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; */
+}
+
+#rulesClose {
+    position: absolute;
+    right: 0;
+    top: -1px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
 .navbar {
     background: #FFFFFF;
     height: 80px;
@@ -62,7 +91,7 @@
     border-radius: 6px;
     padding: 100px 0;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     bottom: 400%;
     left: 50%;
     margin-left: -80px;
@@ -78,7 +107,7 @@
     border-radius: 6px;
     padding: 100px 0;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     bottom: 400%;
     left: 50%;
     margin-left: -80px;
@@ -186,7 +215,7 @@ body {
     flex-grow: 1;
     border: solid 1px rgb(136, 0, 255);
     background-image: url("images/Untitled_Artwork.gif");
-    height: 200;
+    height: 199;
     width: 1200;
  }
 
@@ -215,5 +244,5 @@ marquee{
 
 #histbox{
     flex-grow: 1;
-    height: 50px;
+    height: 30px;
 }

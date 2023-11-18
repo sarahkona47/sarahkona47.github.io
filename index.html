@@ -10,6 +10,12 @@
     </title>
 
 <body>
+    <div class="rules">
+        <span id="rulesClose">X</span>
+    </div>
+
+    <script src="Rules.js"></script>
+
     <nav class="navbar">
         <div class="logo">
             <a href="/" class="logo"> 
@@ -42,22 +48,22 @@
                 <div id="timer">0</div>
                 <p>You could have won: <span id="winnableAmount">$0.00</span></p>
 
-                <button class="sellPopup">
+                <div class="sellPopup">
                     <span class="sellChickenText" id="sellChickenPopup">Chicken Market
                         <span id="close" onclick="sellPopupWin()">X</span>
                         <input type="number" step="1" id="sellChickenNum" placeholder = "chickens"> 
                         <!-- <button class="sell">Sell</button> -->
                     </span>
                     <button onclick="sellPopupWin()">Sell Chicken</button>
-                </button>
+                </div>
                   
-                <button class="buyPopup">
+                <div class="buyPopup">
                     <span class="buyChickenText" id="buyChickenPopup">How many chickens would you like to buy?
                         <span id="close" onclick="buyPopupWin()">X</span>
                         <input type="number" step="1" id="buyChickenNum" placeholder = "chickens"> 
                     </span>
                     <button onclick="buyPopupWin()">Buy Chicken</button>
-                </button>
+                </div>
             </div>
 
             <script src="Crash.js"></script>
@@ -85,7 +91,7 @@
                     </button>
                 </div>
             </div>
-            
+
             <script src="Rage.js"></script>
     </div>
 </head>
