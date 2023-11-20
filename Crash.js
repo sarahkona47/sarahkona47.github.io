@@ -176,21 +176,26 @@ function enableButton(){
 
 //Previous Crashes
 
-//Works but changes the whole crashTrends to the last crash time 
-function prevCrashes(message){
+function prevCrashes(message) {
     previousCrashes.push(message);
     const crashTrends = document.getElementById('trends');
     const crashList = document.createElement('li');
     crashList.textContent = message;
-    const crashValue = parseFloat(timerElement.textContent);
-    if (crashValue < 2) {
-        crashTrends.style.color = 'red';
-    } else {
-        crashTrends.style.color = 'green';
-    }
-    crashTrends.appendChild(crashList);
     
+    // Extract crash value from the message (assuming it's a number)
+    const crashValue = parseFloat(message.match(/\d+\.\d+/)[0]);
+
+    // Apply color directly to the crashList based on the crash value
+    if (crashValue < 2) {
+        crashList.style.color = 'red';
+    } else {
+        crashList.style.color = 'green';
+    }
+
+    // Append the crashList to the crashTrends
+    crashTrends.appendChild(crashList);
 }
+
 
 // If cashout button is clicked, add earned money to bank balance 
 function addToBalance(){
