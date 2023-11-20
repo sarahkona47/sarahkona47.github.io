@@ -11,25 +11,30 @@ function buyChicken() {
     }
     else{
         document.getElementsByClassName("navber_buy").textContent = "You don't have enough money!"; 
-        // totalchickens = totalchickens;
     }
 }
 
 function sellChicken() {
     if (totalchickens >=1) {
-        totalchickens =-1
+        totalchickens = totalchickens-1
         currentBalance = currentBalance + chickenValue
     }
     
     else {
         document.getElementsByClassName("navber_sell").textContent = "You don't have any chickens!"; 
-        // currentBalance = currentBalance;
     }
 }
 
-function chickencoop(){
+function chicken(){
     let img = document.createElement('chicken');
     img.src = 'images/chicken.png';
+    img.style.height = '50px';
+    img.style.width = '50px'; 
     document.getElementById('chickencoop').appendChild(img);
 }
 
+function updateChickens(){
+    for (let chicken in totalchickens) {
+        chicken();
+    }
+}
