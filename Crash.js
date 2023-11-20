@@ -13,8 +13,8 @@ const betButton = document.getElementById("bet");
 
 // Probability ranges used by generate_intervals
 const probabilityRanges = [
-    { minTime: 1.00, maxTime: 1.50, totalProbability: 0.05 }, // 2.00-3.00: 5% crash
-    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.2 }, // 2.00-3.00: 20% crash
+    { minTime: 1.00, maxTime: 1.50, totalProbability: 0.2 }, // 2.00-3.00: 5% crash
+    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.1 }, // 2.00-3.00: 20% crash
     { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
     { minTime: 4.00, maxTime: 5.00, totalProbability: 0.08 }, // 4.00-5.00: 8% crash
     // { minTime: 5.00, maxTime: 6.00, totalProbability: 0.05 }, // 5.00-6.00: 5% crash
@@ -175,12 +175,21 @@ function enableButton(){
 }
 
 //Previous Crashes
+
+//Works but changes the whole crashTrends to the last crash time 
 function prevCrashes(message){
     previousCrashes.push(message);
     const crashTrends = document.getElementById('trends');
     const crashList = document.createElement('li');
     crashList.textContent = message;
+    const crashValue = parseFloat(timerElement.textContent);
+    if (crashValue < 2) {
+        crashTrends.style.color = 'red';
+    } else {
+        crashTrends.style.color = 'green';
+    }
     crashTrends.appendChild(crashList);
+    
 }
 
 // If cashout button is clicked, add earned money to bank balance 
