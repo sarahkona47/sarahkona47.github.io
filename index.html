@@ -10,11 +10,11 @@
     </title>
 
 <body>
-    <div class="rules">
+    <!-- <div class="rules">
         <span id="rulesClose">X</span>
     </div>
 
-    <script src="Rules.js"></script>
+    <script src="Rules.js"></script> -->
 
     <nav class="navbar">
         <div class="logo">
@@ -22,11 +22,11 @@
                 <img class="logo" src="images/logo.png" position=left  height=80 width=80></a>
         </div>
         <div class="navbar__all">
-            <!-- <button onclick="enableButton()" class="navbar__restart" type="button">Restart</button> -->
-            <!-- <button class="navbar__sell" type="button" onclick="sellPopup()">Sell Chicken
+            <button onclick="enableButton()" class="navbar__restart" type="button">Restart</button>
+            <button class="navbar__sell" type="button" onclick="sellPopup()">Sell Chicken
                 <span class="sellPopupText" id="sellPopup">sell chicken</span>
             </button>     
-            <button class="navbar__buy" type="button" onclick="buyChicken()">Buy Chicken</button> -->
+            <button class="navbar__buy" type="button" onclick="buyChicken()">Buy Chicken</button>
             <p class="balance">Bank Balance: <span id="myBalance">$1000.00</span></p>
         </div> 
     </nav> 
@@ -52,7 +52,6 @@
                     <span class="sellChickenText" id="sellChickenPopup">Chicken Market
                         <span id="close" onclick="sellPopupWin()">X</span>
                         <input type="number" step="1" id="sellChickenNum" placeholder = "chickens"> 
-                        <!-- <button class="sell">Sell</button> -->
                     </span>
                     <button onclick="sellPopupWin()">Sell Chicken</button>
                 </div>
