@@ -7,7 +7,7 @@
 
 /* .rules {
     width: 300px;
-    /* height: inherit; */
+    height: inherit;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
@@ -24,15 +24,15 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; */
-}
+/* } */
 
-#rulesClose {
+/* #rulesClose {
     position: absolute;
     right: 0;
     top: -1px;
     background: #ffffff;
     cursor: pointer;
-}
+} */
 
 .navbar {
     background: #FFFFFF;
@@ -84,7 +84,7 @@
 /* The actual popup */
 .sellPopup .sellChickenText {
     visibility: hidden;
-    width: 200px;
+    width: 250px;
     background-color: #e8c3f8;
     color: #000000;
     text-align: center;
@@ -100,7 +100,7 @@
 
 .buyPopup .buyChickenText {
     visibility: hidden;
-    width: 200px;
+    width: 250px;
     background-color: #e8c3f8;
     color: #000000;
     text-align: center;
@@ -220,6 +220,7 @@ body {
  }
 
 
+
 marquee{
     position: relative;
     /* z-index: 9999; */
@@ -244,5 +245,5 @@ marquee{
 
 #histbox{
     flex-grow: 1;
-    height: 30px;
+    height: 20px;
 }

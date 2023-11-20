@@ -19,29 +19,29 @@
     <nav class="navbar">
         <div class="logo">
             <a href="/" class="logo"> 
-                <img class="logo" src="images/logo.png" position=left  height=80 width=80></a>
+                <img class="logo" src="images/logo.png" position=left  height=80 width=80 alt="purple rice logo"></a>
         </div>
         <div class="navbar__all">
-            <!-- <button onclick="enableButton()" class="navbar__restart" type="button">Restart</button>
-            <button class="navbar__sell" type="button" onclick="sellPopup()">Sell Chicken
-                <span class="sellPopupText" id="sellPopup">sell chicken</span>
-            </button>     
-            <button class="navbar__buy" type="button" onclick="buyChicken()">Buy Chicken</button> -->
+        <h3>
             <p class="balance">Bank Balance: <span id="myBalance">$1000.00</span></p>
+        </h3>
         </div> 
     </nav> 
 
     <div class="box-wrapper">
         <div class="left-column">
             <div id="gamebox">
-                <img src="images/IMG_0020.gif" height=200 width= 200>
+                <img src="images/IMG_0020.gif" height=200 width= 200 alt="Cute chick">
                 <h2>
                 Play Game
                 </h2>
                 <br>
-                <input type="number" step="0.01" id="numberInput" placeholder = "Place your bet">
+                <form>
+                    <label for="numberInput">Bet Amount</label>
+                    <input type="number" step="0.01" id="numberInput" placeholder = "Place your bet">
+                </form>
                 <button id="bet" onclick="multiplier()">Bet</button>
-                <button id="cashout" onclick="winAmount(); disableButton(); addToBalance()">CASH OUT</button>
+                <button id="cashout" onclick="winAmount(); disableButton(); addToBalance(earn)">CASH OUT</button>
                 <p id="earn"></p>
                 <br>
 
@@ -51,7 +51,12 @@
                 <div class="sellPopup">
                     <span class="sellChickenText" id="sellChickenPopup">Chicken Market
                         <span id="close" onclick="sellPopupWin()">X</span>
-                        <input type="number" step="1" id="sellChickenNum" placeholder = "chickens"> 
+                        <form>
+                            <label for="sellChickenNum">Sell</label>
+                            <input type="number" step="1" id="sellChickenNum" placeholder = "chickens"> 
+                        </form>
+                        <button id = "sellButton">Sell</button>
+                        <p id="sellMessage"></p>
                     </span>
                     <button onclick="sellPopupWin()">Sell Chicken</button>
                 </div>
@@ -59,7 +64,12 @@
                 <div class="buyPopup">
                     <span class="buyChickenText" id="buyChickenPopup">How many chickens would you like to buy?
                         <span id="close" onclick="buyPopupWin()">X</span>
-                        <input type="number" step="1" id="buyChickenNum" placeholder = "chickens"> 
+                        <form>
+                            <label for="buyChickenNum">Buy</label>
+                            <input type="number" step="1" id="buyChickenNum" placeholder = "chickens"> 
+                        </form>
+                        <button id = "buyButton">Buy</button>
+                        <p id="buyMessage"></p>
                     </span>
                     <button onclick="buyPopupWin()">Buy Chicken</button>
                 </div>
@@ -67,26 +77,31 @@
 
             <script src="Crash.js"></script>
             <script src="sellBuyPopup.js" ></script>
+            <script src="ChickenCoop.js"></script>
 
             <div id="chickencoop">
                 <marquee behavior="alternate" scrollamount="20">
                     <marquee behavior="alternate" scrollamount="20" direction="down" height=10px>
-                        <img src="images/chicken.png" height = 50 width = 50 >
+                        <img src="images/chicken.png" height = 50 width = 50 alt="bouncy chicken">
+                        <!-- <img id="chicken"> -->
                     </marquee>
                 </marquee>
             </div>
+            <!-- <script src="ChickenCoop.js"></script> -->
         </div>    
 
             <div class="right-column">
                 <div id="histbox">
+                <h2>
                     History
+                </h2>
                     <br>
                     <u1 id="trends">
                     </u1>
                 </div>
                 <div id="ragebox">
                     <button onclick="pictureChange()">
-                        <img id="rageButton" src="images/IMG_0003.gif" height = 200 width = 200>
+                        <img id="rageButton" src="images/IMG_0003.gif" height = 200 width = 200 alt="angry chicken">
                     </button>
                 </div>
             </div>
