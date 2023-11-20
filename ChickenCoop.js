@@ -1,13 +1,12 @@
 import { currentBalance } from "./Crash";
 
 const startingChickens = 1;
-var boughtChicken = 0;
-const totalchickens = startingChickens + boughtChicken; 
+const totalchickens = startingChickens; 
 const chickenValue = 500;
 
 function buyChicken() {
     if (currentBalance > chickenValue){
-        totalchickens = totalchickens + 1
+        totalchickens = (totalchickens + 1).toFixed(0)
     }
     else{
         document.getElementsByClassName("navber_buy").textContent = "You don't have enough money!"; 
@@ -16,7 +15,7 @@ function buyChicken() {
 
 function sellChicken() {
     if (totalchickens >=1) {
-        totalchickens = totalchickens-1
+        totalchickens = (totalchickens-1).toFixed(0);
         currentBalance = currentBalance + chickenValue
     }
     
@@ -25,16 +24,18 @@ function sellChicken() {
     }
 }
 
-function chicken(){
-    let img = document.createElement('chicken');
+function chickenImage(){
+    let img = document.createElement('img');
     img.src = 'images/chicken.png';
     img.style.height = '50px';
     img.style.width = '50px'; 
     document.getElementById('chickencoop').appendChild(img);
 }
 
-function updateChickens(){
+function updateChickensOnScreen(){
     for (let chicken in totalchickens) {
-        chicken();
+        chickenImage();
     }
 }
+
+updateChickensOnScreen();
