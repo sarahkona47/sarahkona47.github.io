@@ -1,5 +1,5 @@
 // manageBalance manages balance, transactions
-var currentBalance = 1000;
+// var currentBalance = 1000;
 
 // If cashout button is clicked, add earned money to bank balance 
 function addToBalance(){
@@ -32,7 +32,7 @@ function deductFromBalance(){
             document.getElementById("earn").textContent = "Oh no! You lost all your money!";
         }
         else{
-            currentBalance = parseFloat(currentBalance-parsedNumber);
+            // currentBalance = parseFloat(currentBalance-parsedNumber);
             document.getElementById("earn").textContent = "Oh no! You lost $" + parsedNumber.toFixed(2) + "!";
         }
     }
