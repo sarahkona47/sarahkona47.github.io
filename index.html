@@ -3,12 +3,22 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
- 
+    <meta charset="UTF-8">
+
     <title>
         Gambling Simulator by Purple Rice
     </title>
-
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <!-- Overlay and Popup content -->
+  <div class="overlay" id="overlay">
+    <div class="popup">
+      <h2>Welcome to Our Website!</h2>
+      <p>Rules of the Game: </p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  
 <body>
     <!-- <div class="rules">
         <span id="rulesClose">X</span>
@@ -17,10 +27,10 @@
     <script src="Rules.js"></script> -->
 
     <nav class="navbar">
-        <div class="logo">
+        <!-- <div class="logo">
             <a href="/" class="logo"> 
                 <img class="logo" src="images/logo.png" position=left  height=80 width=80 alt="purple rice logo"></a>
-        </div>
+        </div> -->
         <div class="navbar__all">
         <h3>
             <p class="balance">Bank Balance: <span id="myBalance">$1000.00</span></p>
@@ -75,9 +85,13 @@
                 </div>
             </div>
 
-            <script src="Crash.js"></script>
+            <script src="buttonComponents.js"></script>
             <script src="sellBuyPopup.js" ></script>
-            <script src="ChickenCoop.js"></script>
+            <script src="chickenCoop.js"></script>
+            <script src="manageBalance.js"></script>
+            <script src="gameRules.js"></script>
+            <script src="crashProbability.js"></script>
+
 
             <div id="chickencoop">
                 <marquee behavior="alternate" scrollamount="20">
@@ -100,13 +114,14 @@
                     </u1>
                 </div>
                 <div id="ragebox">
-                    <button onclick="pictureChange()">
+                    <button onclick="rageButtonActivate()">
                         <img id="rageButton" src="images/IMG_0003.gif" height = 200 width = 200 alt="angry chicken">
                     </button>
                 </div>
+                <script src="buttonComponents.js"></script>
+
             </div>
 
-            <script src="Rage.js"></script>
     </div>
 </head>
 

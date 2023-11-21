@@ -1,12 +1,12 @@
 # Purple Rice Gambling Simulator
 
-Authors: Sarah Choi, Eunice Lim, Daniel Seo \
+Authors: Eunice Lim, Daniel Seo, Sarah Choi \
 \
 COMP 225: Software Development and Design \
 \
 PICTURE OF THE GAME WILL GO HERE
 ## Vision
-“Gambling made simple and easy, without consequences!"\
+“Gambling made simple, easy, and gamified - without consequences!"\
 \
 Experience the addictive world of gambling through our crash simulator.
 
@@ -17,7 +17,7 @@ Users are able to play the game at this link: https://sarahkona47.github.io./
 
 ### Rules
 The rules of the game are simple. 
-- Bet your money and watch it multiply!
+- Bet your  and watch it multiply!
 - Cash out before the multiplier crashes; if not you will lose your bet! 
 
 ### Features
