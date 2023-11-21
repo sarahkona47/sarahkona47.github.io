@@ -1,4 +1,5 @@
 // manageBalance manages balance, transactions
+var currentBalance = 1000;
 
 // If cashout button is clicked, add earned money to bank balance 
 function addToBalance(){
@@ -11,10 +12,10 @@ function addToBalance(){
     document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
 }
 
-function addBalance(val){
-    currentBalance = parseFloat(currentBalance+parseFloat(val));
-    document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
-}
+// function addBalance(val){
+//     currentBalance = parseFloat(currentBalance+parseFloat(val));
+//     document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
+// }
 
 // If cashout button is still enabled (the user didn't press it), deducts lost money from bank balance
 function deductFromBalance(){
@@ -28,15 +29,16 @@ function deductFromBalance(){
         currentBalance = parseFloat(currentBalance-parsedNumber);
         document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
         if (currentBalance == 0){
-            document.getElementById("earn").textContent = "Oh no! You lost all your money! Sell a chicken to earn more!";
+            document.getElementById("earn").textContent = "Oh no! You lost all your money!";
         }
         else{
+            currentBalance = parseFloat(currentBalance-parsedNumber);
             document.getElementById("earn").textContent = "Oh no! You lost $" + parsedNumber.toFixed(2) + "!";
         }
     }
 }
 
-function deductBalance(val){
-    currentBalance = parseFloat(currentBalance-parseFloat(val));
-    document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
-}
+// function deductBalance(val){
+//     currentBalance = parseFloat(currentBalance-parseFloat(val));
+//     document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
+// }
