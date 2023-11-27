@@ -74,14 +74,14 @@
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 50px;
+    /* padding: 0 50px; */
     align-items: center;
     -webkit-text-fill-color: black;
     flex-grow: 1;
 }
 
 /* Popup container */
-.sellPopup {
+/* .sellPopup {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -99,10 +99,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+  } */
   
 /* The actual popup */
-.sellPopup .sellChickenText {
+/* .sellPopup .sellChickenText {
     visibility: hidden;
     width: 250px;
     background-color: #e8c3f8;
@@ -131,7 +131,7 @@
     bottom: 400%;
     left: 50%;
     margin-left: -80px;
-    }
+    } */
 
 /* .sellPopup#sellChickenNum {
     visibility: hidden;
@@ -149,7 +149,7 @@
     } */
   
 /* Hide and show the popup */
-.sellPopup .show {
+/* .sellPopup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
@@ -167,10 +167,10 @@
     top: -1px;
     background: #ffffff;
     cursor: pointer;
-}
+} */
 
   /* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
+/* @-webkit-keyframes fadeIn {
     from {opacity: 0;} 
     to {opacity: 1;}
   }
@@ -178,7 +178,7 @@
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
-  }
+  } */
 
 body {
     margin: 1%;
@@ -188,6 +188,7 @@ body {
 .box-wrapper {
     text-align: center;
     display: flex;
+    /* height: 1000; */
 }
 
 .left-column {
@@ -198,7 +199,8 @@ body {
 
 .left-column div {
     margin: 8 8px;
-    border: solid 1px rgb(136, 0, 255);
+    /* border: solid 1px rgb(136, 0, 255); */
+    /* background-color: rgb(201, 145, 251); */
 }
 
 .left-column div+div {
@@ -210,7 +212,7 @@ body {
     flex-grow: 2;
     flex-direction: column;
     /* border: solid 1px rgb(136, 0, 255);  */
-    height: 450px; 
+    height: 460px; 
 }
 
 #numberInput {
@@ -234,18 +236,18 @@ body {
 #chickencoop {
     flex-grow: 1;
     border: solid 1px rgb(136, 0, 255);
-    background-image: url("images/chickenCoopBG.gif");
-    height: 199;
+    /* background-image: url("images/chickenCoopBG.gif"); */
+    /* height: 180; */
     width: 1200;
  }
 
-marquee{
+/* marquee{
     position: relative;
-    /* z-index: 9999; */
-    height: 200px;
-    /* width: 100%; */
+    z-index: 9999;
+    height: 180px;
+    width: 100%;
     flex-grow: 1;
-}
+} */
 
 .right-column {
     display: flex;
@@ -254,7 +256,7 @@ marquee{
 
 .right-column div {
     margin: 0 8px;
-    border: solid 1px rgb(136, 0, 255);
+    /* border: solid 1px rgb(136, 0, 255); */
 }
 
 .right-column div+div {
@@ -264,4 +266,5 @@ marquee{
 #histbox{
     flex-grow: 1;
     height: 20px;
+    border: solid 1px rgb(136, 0, 255);
 }
