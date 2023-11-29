@@ -1,4 +1,6 @@
 // manageBalance manages balance, transactions
+const startBalance = 3;
+var currentBalance = 3;
 
 // If cashout button is clicked, add earned money to bank balance 
 function addToBalance(){
@@ -43,7 +45,7 @@ function deductFromBalance(){
     }
     else{
         currentBalance = parseFloat(currentBalance-parsedNumber);
-        document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0);
+        document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + "x chicken(s)";
         if (currentBalance == 0){
             document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
             addChicken();

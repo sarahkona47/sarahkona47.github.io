@@ -34,20 +34,29 @@
     // }
 // }
 
-function chickenImage(){
-    let img = document.createElement('img');
-    img.src = 'images/chicken.png';
-    img.style.height = '50px';
-    img.style.width = '50px';
-    img.style.position = 'absolute';
-    img.style.top = document.body.clientHeight * Math.random() + 'px';
-    img.style.left = document.body.clientWidth * Math.random() + 'px';
-}
+// function chickenImage(){
+//     let img = document.createElement('img');
+//     img.src = 'images/chicken.png';
+//     img.style.height = '50px';
+//     img.style.width = '50px';
+//     img.style.position = 'absolute';
+//     img.style.top = document.body.clientHeight * Math.random() + 'px';
+//     img.style.left = document.body.clientWidth * Math.random() + 'px';
+// }
 
 function addChicken(){
+    // if !currentBalance 
+    document.getElementById("myChickens").innerHTML = "";
     for (var i = 0; i < currentBalance.toFixed(0); i++){
-        document.getElementById("chicken").src="";
+        let img = document.createElement('img');
+        img.src = 'images/chicken.png';
+        img.style.height = '50px';
+        img.style.width = '50px';
+        document.getElementById("myChickens").append(img);
+        console.log("chicken added");
     }
 }    
+
+document.addEventListener("DOMContentLoaded",addChicken());
 
 // updateChickensOnScreen();

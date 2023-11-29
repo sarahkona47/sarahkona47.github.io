@@ -244,10 +244,11 @@ body {
     width: 1200;
  }
 
- /* #chicken {
+ #myChickens {
     position: absolute;
     z-index: 1;
- } */
+    bottom: 0;
+ }
 
 /* marquee{
     position: relative;

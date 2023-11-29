@@ -1,8 +1,8 @@
 // Declare Variables
 var previousCrashes = [];
 const intervals = [];
-const startBalance = 3;
-var currentBalance = 3;
+// const startBalance = 3;
+// var currentBalance = 3;
 
 const numberInput = document.getElementById("numberInput");
 const timerElement = document.getElementById("timer");
