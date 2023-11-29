@@ -20,31 +20,13 @@
   </div>
   
 <body>
-    <!-- <div class="rules">
-        <span id="rulesClose">X</span>
-    </div>
-
-    <script src="Rules.js"></script> -->
-
-    <!-- <nav class="navbar">
-        <div class="logo">
-            <a href="/" class="logo"> 
-                <img class="logo" src="images/logo.png" position=left  height=80 width=80 alt="purple rice logo"></a>
-        </div>
-        <div class="navbar__all">
-        <h3>
-            <p class="balance">Bank Balance: <span id="myBalance">$1000.00</span></p>
-        </h3>
-        </div> 
-    </nav>  -->
-
     <div class="box-wrapper">
         <div class="left-column">
             <div id="gamebox">
-                <div class="navbar__all">
+                <div class="bank">
                     <h3>
-                        Bank Balance:
-                        <p class="balance"> <span id="myBalance">$1000.00</span></p>
+                        Chicken Bank:
+                        <span id="chickenBalance">3x chicken(s)</span></p>
                     </h3>
                 </div> 
                 <img src="images/IMG_0020.gif" height=200 width= 200 alt="Cute chick">
@@ -54,15 +36,15 @@
                 <!-- <br> -->
                 <!-- <form> -->
                     <!-- <label for="numberInput">Enter</label> -->
-                <input type="number" step="0.01" id="numberInput" placeholder = "Place your bet">
+                <input accesskey="i" type="number" step="0.01" id="numberInput" placeholder = "BET CHICKENS">
                 <!-- </form> -->
-                <button id="bet" onclick="multiplier()">Bet</button>
-                <button id="cashout" onclick="winAmount(); disableButton(); addToBalance()">CASH OUT</button>
+                <button accesskey="b" id="bet" onclick="multiplier()">Bet</button>
+                <button accesskey="c" id="cashout" onclick="winAmount(); disableButton(); addToBalance(); addChicken()">CASH OUT</button>
                 <p id="earn"></p>
                 <!-- <br> -->
 
-                <div id="timer">0</div>
-                <p> <span id="winnableAmount">$0.00</span></p>
+                <div id="timer">Multiplier: 0</div>
+                <p> <span id="winnableAmount">0 chickens</span></p>
 
                 <!-- <div class="sellPopup">
                     <span class="sellChickenText" id="sellChickenPopup">Chicken Market
@@ -93,7 +75,7 @@
 
             <script src="buttonComponents.js"></script>
             <script src="popUpComponents.js" ></script>
-            <script src="chickenCoop.js"></script>
+            <script src="ChickenCoop.js"></script>
             <script src="manageBalance.js"></script>
             <script src="gameRules.js"></script>
             <script src="crashProbability.js"></script>
@@ -107,7 +89,8 @@
                         <!-- <img id="chicken"> -->
                     <!-- </marquee> -->
         
-                </marquee>
+                <!-- </marquee> -->
+                <!-- <img id="chicken" alt="my chickens"> -->
             </div>
             <!-- <script src="ChickenCoop.js"></script> -->
         </div>    
@@ -117,6 +100,7 @@
                 <h2>
                     History
                 </h2>
+                <!-- <p>Past Crashes</p> -->
                     <br>
                     <u1 id="trends">
                     </u1>

@@ -1,8 +1,8 @@
 // Declare Variables
 var previousCrashes = [];
 const intervals = [];
-const startBalance = 1000;
-var currentBalance = 1000;
+const startBalance = 3;
+var currentBalance = 3;
 
 const numberInput = document.getElementById("numberInput");
 const timerElement = document.getElementById("timer");
@@ -53,7 +53,7 @@ function updateWinnableAmount() {
     const displayTime = parseFloat(timerElement.textContent);
     const winnableAmount = numberInput * displayTime;
     // Update the winnable amount in the UI
-    document.getElementById("winnableAmount").textContent = "You could have won: $" + winnableAmount.toFixed(2);
+    document.getElementById("winnableAmount").textContent = "You could have won: " + winnableAmount.toFixed(0) + " chickens";
 }
 
 //** Generate different intervals based on fixed probability ranges defined as probabilityRanges above */ 
@@ -136,7 +136,7 @@ function winAmount(){
     const parsedNumber = parseFloat(numberInput);
     const currentTimestamp = parseFloat(timerElement.textContent);
     const earn = parsedNumber * currentTimestamp;
-    document.getElementById("earn").textContent = "You won $" + earn.toFixed(2) + "!";
+    document.getElementById("earn").textContent = "You won " + earn.toFixed(0) + " chicken(s)!";
 }
 
 // Need a function to reset all the text when a bet is finished
@@ -183,3 +183,7 @@ function prevCrashes(message) {
     crashTrends.appendChild(crashList);
 }
 
+function clearMessages() {
+    document.getElementById("earn").textContent = "";
+    document.getElementById("winnableAmount").textContent = "";
+}

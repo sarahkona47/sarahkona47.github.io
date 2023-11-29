@@ -8,13 +8,13 @@ function addToBalance(){
     const earn = parsedNumber * currentTimestamp;
 
     currentBalance = parseFloat(currentBalance+earn);
-    document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
+    document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + "x chicken(s)";
 }
 
 
 // function addBalance(val){
 //     currentBalance = parseFloat(currentBalance+parseFloat(val));
-//     document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
+//     document.getElementById("chickenBalance").textContent = currentBalance.toFixed(2);
 // }
 
 // function addChicken() {
@@ -43,17 +43,19 @@ function deductFromBalance(){
     }
     else{
         currentBalance = parseFloat(currentBalance-parsedNumber);
-        document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
+        document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0);
         if (currentBalance == 0){
-            document.getElementById("earn").textContent = "Oh no! You lost all your money!";
+            document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
+            addChicken();
         }
         else{
-            document.getElementById("earn").textContent = "Oh no! You lost $" + parsedNumber.toFixed(2) + "!";
+            document.getElementById("earn").textContent = "Oh no! You lost " + parsedNumber.toFixed(0) + " chicken(s)!";
+            addChicken();
         }
     }
 }
 
 // function deductBalance(val){
 //     currentBalance = parseFloat(currentBalance-parseFloat(val));
-//     document.getElementById("myBalance").textContent = currentBalance.toFixed(2);
+//     document.getElementById("chickenBalance").textContent = currentBalance.toFixed(2);
 // }

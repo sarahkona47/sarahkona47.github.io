@@ -207,6 +207,10 @@ body {
     margin-top: 8px;
 }
 
+.bank{
+    background-color: rgb(227, 200, 240);
+}
+
 
 #gamebox {
     flex-grow: 2;
@@ -235,11 +239,15 @@ body {
 
 #chickencoop {
     flex-grow: 1;
-    /* border: solid 1px rgb(136, 0, 255); */
-    /* background-image: url("images/chickenCoopBG.gif"); */
+    /* border: solid 3px rgb(136, 0, 255); */
     /* height: 180; */
     width: 1200;
  }
+
+ /* #chicken {
+    position: absolute;
+    z-index: 1;
+ } */
 
 /* marquee{
     position: relative;
