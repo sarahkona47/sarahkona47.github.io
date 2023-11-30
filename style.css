@@ -181,13 +181,15 @@
   } */
 
 body {
-    margin: 1%;
+    /* margin: 1%; */
+    margin: 0;
     justify-content: center;
 }
 
 .box-wrapper {
     text-align: center;
     display: flex;
+    width: 100vw;
     /* height: 1000; */
 }
 
@@ -213,7 +215,7 @@ body {
 
 
 #gamebox {
-    flex-grow: 2;
+    flex-grow: 1;
     flex-direction: column;
     /* border: solid 1px rgb(136, 0, 255);  */
     height: 460px; 
@@ -242,6 +244,8 @@ body {
     /* border: solid 3px rgb(136, 0, 255); */
     /* height: 180; */
     width: 1200;
+    position: absolute;
+    bottom: 0;
  }
 
  #myChickens {
@@ -260,6 +264,7 @@ body {
 
 .right-column {
     display: flex;
+    flex: 1;
     flex-direction: column;
 }
 
@@ -274,6 +279,13 @@ body {
 
 #histbox{
     flex-grow: 1;
-    height: 20px;
+    /* height: 20px; */
+    /* min-height: 75vh; */
     border: solid 1px rgb(136, 0, 255);
+    height: 100%;
+}  
+
+#ragebox {
+    position: absolute;
+    bottom: 0;
 }
