@@ -11,7 +11,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <!-- Overlay and Popup content -->
-  <div class="overlay" id="overlay">
+  <!-- <div class="overlay" id="overlay">
     <div class="popup">
       <h2>Welcome to Chicken Gamble!</h2>
       <p>How to Play: </p>
@@ -19,18 +19,12 @@
         <br> Try not to lose them all! <br>
       <button onclick="closePopup()">Close</button>
     </div>
-  </div>
+  </div> -->
   
 <body>
     <div class="box-wrapper">
         <div class="left-column">
             <div id="gamebox">
-                <div class="bank">
-                    <h3>
-                        Chicken Bank:
-                        <span id="chickenBalance">3x chicken(s)</span></p>
-                    </h3>
-                </div> 
                 <img src="images/IMG_0020.gif" height=200 width= 200 alt="Cute chick">
                 <h2>
                 Play Game
@@ -47,43 +41,25 @@
 
                 <div id="timer">Multiplier: 0</div>
                 <p> <span id="winnableAmount">0 chickens</span></p>
-
-                <!-- <div class="sellPopup">
-                    <span class="sellChickenText" id="sellChickenPopup">Chicken Market
-                        <span id="close" onclick="sellPopupWin()">X</span>
-                        <form>
-                            <label for="sellChickenNum">Sell</label>
-                            <input type="number" step="1" id="sellChickenNum" placeholder = "chickens"> 
-                        </form>
-                        <button id = "sellButton">Sell</button>
-                        <p id="sellMessage"></p>
-                    </span>
-                    <button onclick="sellPopupWin()">Sell Chicken</button>
-                </div>
-                  
-                <div class="buyPopup">
-                    <span class="buyChickenText" id="buyChickenPopup">How many chickens would you like to buy?
-                        <span id="close" onclick="buyPopupWin()">X</span>
-                        <form>
-                            <label for="buyChickenNum">Buy</label>
-                            <input type="number" step="1" id="buyChickenNum" placeholder = "chickens"> 
-                        </form>
-                        <button id = "buyButton">Buy</button>
-                        <p id="buyMessage"></p>
-                    </span>
-                    <button onclick="buyPopupWin()">Buy Chicken</button>
-                </div> -->
             </div>
                         
             <script src="buttonComponents.js"></script>
-            <script src="popUpComponents.js" ></script>
+            <!-- <script src="popUpComponents.js" ></script> -->
             <script src="ChickenCoop.js"></script>
             <script src="manageBalance.js"></script>
-            <script src="gameRules.js"></script>
+            <!-- <script src="gameRules.js"></script> -->
             <script src="crashProbability.js"></script>
 
             
             <div id="chickencoop">
+
+                <div class="bank">
+                    <h3>
+                        Chicken Bank:
+                        <span id="chickenBalance">3x chicken(s)</span></p>
+                    </h3>
+                </div> 
+
                 <img src="images/chickenCoopBG.gif" height = 200 width = 1200 alt="background">
                 <!-- <marquee behavior="alternate" scrollamount="20">
                     <marquee behavior="alternate" scrollamount="20" direction="down" height=10px>

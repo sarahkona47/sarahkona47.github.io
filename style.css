@@ -19,12 +19,7 @@
     bottom: 30%;
     left: 30%;
     border-radius: 6px; */
-/* 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
-/* } */
+
 
 /* #rulesClose {
     position: absolute;
@@ -34,7 +29,7 @@
     cursor: pointer;
 } */
 
-.overlay {
+/* .overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -44,140 +39,14 @@
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-  }
+  } */
 
   /* Styles for the popup */
-  .popup {
+  /* .popup {
     background: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-
-.navbar {
-    background: #FFFFFF;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.navbar__all {
-    display: flex;
-    justify-content: space-evenly;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    /* padding: 0 50px; */
-    align-items: center;
-    -webkit-text-fill-color: black;
-    flex-grow: 1;
-}
-
-/* Popup container */
-/* .sellPopup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-.buyPopup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  } */
-  
-/* The actual popup */
-/* .sellPopup .sellChickenText {
-    visibility: hidden;
-    width: 250px;
-    background-color: #e8c3f8;
-    color: #000000;
-    text-align: center;
-    border-radius: 6px;
-    padding: 100px 0;
-    position: absolute;
-    z-index: 0;
-    bottom: 400%;
-    left: 50%;
-    margin-left: -80px;
-    }
-
-
-.buyPopup .buyChickenText {
-    visibility: hidden;
-    width: 250px;
-    background-color: #e8c3f8;
-    color: #000000;
-    text-align: center;
-    border-radius: 6px;
-    padding: 100px 0;
-    position: absolute;
-    z-index: 0;
-    bottom: 400%;
-    left: 50%;
-    margin-left: -80px;
-    } */
-
-/* .sellPopup#sellChickenNum {
-    visibility: hidden;
-    width: 200px;
-    background-color: #e8c3f8;
-    color: #000000;
-    text-align: center;
-    border-radius: 6px;
-    padding: 100px 0;
-    position: absolute;
-    z-index: 2;
-    bottom: 400%;
-    left: 50%;
-    margin-left: -80px;
-    } */
-  
-/* Hide and show the popup */
-/* .sellPopup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
-  
-.buyPopup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
-
-#close {
-    position: absolute;
-    right: 0;
-    top: -1px;
-    background: #ffffff;
-    cursor: pointer;
-} */
-
-  /* Add animation (fade in the popup) */
-/* @-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
-  }
-  
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
   } */
 
 body {
@@ -196,7 +65,7 @@ body {
 .left-column {
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    /* width: 80vw; */
 }
 
 .left-column div {
@@ -218,7 +87,7 @@ body {
     flex-grow: 1;
     flex-direction: column;
     /* border: solid 1px rgb(136, 0, 255);  */
-    height: 460px; 
+    height: 70vh; 
 }
 
 #numberInput {
@@ -243,9 +112,9 @@ body {
     flex-grow: 1;
     /* border: solid 3px rgb(136, 0, 255); */
     /* height: 180; */
-    width: 1200;
-    position: absolute;
-    bottom: 0;
+    height: 30vh;
+    /* position: absolute; */
+    /* bottom: 0; */
  }
 
  #myChickens {
@@ -266,6 +135,7 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;
+    /* width: 20vw; */
 }
 
 .right-column div {
@@ -282,10 +152,12 @@ body {
     /* height: 20px; */
     /* min-height: 75vh; */
     border: solid 1px rgb(136, 0, 255);
-    height: 100%;
+    height: 70vh;
+    width: 200px;
 }  
 
 #ragebox {
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
+    height: 30vh;
 }

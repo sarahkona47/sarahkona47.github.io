@@ -41,7 +41,7 @@ function updateTimer() {
         prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n'); 
         enableButton();
         intervals.length = 0;
-        reset(numberInput);
+        // reset(numberInput);
     } else{
         requestAnimationFrame(updateTimer);
     }
