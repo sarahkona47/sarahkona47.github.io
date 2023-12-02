@@ -48,11 +48,11 @@ function deductFromBalance(){
         document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + " chicken(s)";
         if (currentBalance == 0){
             document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
-            addChicken();
+            updateChickens();
         }
         else{
             document.getElementById("earn").textContent = "Oh no! You lost " + parsedNumber.toFixed(0) + " chicken(s)!";
-            addChicken();
+            updateChickens();
         }
     }
 }

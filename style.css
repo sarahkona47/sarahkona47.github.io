@@ -112,11 +112,12 @@ body {
     border-radius: 150px;
 }
 
-#chickencoop {
+.chickencoop {
     flex-grow: 1;
     /* border: solid 3px rgb(136, 0, 255); */
     /* height: 180; */
     height: 25vh;
+    /* width: 85vw; */
     /* position: absolute; */
     /* bottom: 0; */
  }
@@ -125,6 +126,9 @@ body {
     position: absolute;
     z-index: 1;
     bottom: 0;
+    height: 25vh;
+    width: 85vw;
+    margin-left: 0;
  }
 
 /* marquee{
@@ -156,7 +160,7 @@ body {
     /* height: 20px; */
     /* min-height: 75vh; */
     border: solid 1px rgb(136, 0, 255);
-    height: 67vh;
+    height: 65vh;
     width: 200px;
 }  
 

@@ -53,7 +53,7 @@ function updateWinnableAmount() {
     const displayTime = parseFloat(timerElement.textContent);
     const winnableAmount = numberInput * displayTime;
     // Update the winnable amount in the UI
-    document.getElementById("winnableAmount").textContent = "You could have won: " + winnableAmount.toFixed(0) + " chickens";
+    document.getElementById("winnableAmount").textContent = "You could have won " + winnableAmount.toFixed(0) + " chickens";
 }
 
 //** Generate different intervals based on fixed probability ranges defined as probabilityRanges above */ 
