@@ -10,7 +10,7 @@ function addToBalance(){
     const earn = parsedNumber * currentTimestamp;
 
     currentBalance = parseFloat(currentBalance+earn);
-    document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + "x chicken(s)";
+    document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + " chicken(s)";
 }
 
 
@@ -45,7 +45,7 @@ function deductFromBalance(){
     }
     else{
         currentBalance = parseFloat(currentBalance-parsedNumber);
-        document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + "x chicken(s)";
+        document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + " chicken(s)";
         if (currentBalance == 0){
             document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
             addChicken();

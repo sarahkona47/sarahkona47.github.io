@@ -94,6 +94,10 @@ body {
     font-size: larger;
 }
 
+#earn{
+    font-size: x-large;
+}
+
 #winnableAmount {
     font-size: x-large;
 }
@@ -112,7 +116,7 @@ body {
     flex-grow: 1;
     /* border: solid 3px rgb(136, 0, 255); */
     /* height: 180; */
-    height: 30vh;
+    height: 25vh;
     /* position: absolute; */
     /* bottom: 0; */
  }
@@ -152,12 +156,12 @@ body {
     /* height: 20px; */
     /* min-height: 75vh; */
     border: solid 1px rgb(136, 0, 255);
-    height: 70vh;
+    height: 67vh;
     width: 200px;
 }  
 
 #ragebox {
     /* position: absolute; */
     /* bottom: 0; */
-    height: 30vh;
+    height: 25vh;
 }
