@@ -13,6 +13,7 @@ function updateChickens(){
 // Window.onload = addStartingChicken();
 
 function betChickens(){
+    document.getElementById("betChickens").textContent = "You bet "
     for (var i = 0; i < document.getElementById("numberInput").value; i++){
         let img = document.createElement('img');
         img.src = 'images/chicken.png';
@@ -24,6 +25,5 @@ function betChickens(){
 }
 
 function clearChickens(){
-    document.getElementById("myChickens").innerHTML = "";
     document.getElementById("betChickens").innerHTML = "";
 }

@@ -34,8 +34,8 @@
                     <!-- <label for="numberInput">Enter</label> -->
                 <input accesskey="i" type="number" step="0.01" id="numberInput" placeholder = "BET CHICKENS HERE!">
                 <!-- </form> -->
-                <button accesskey="b" id="bet" onclick="betChickens(); multiplier()">Bet</button>
-                <button accesskey="c" id="cashout" onclick="winAmount(); disableButton(); addToBalance(); clearChickens(); updateChickens();">CASH OUT</button>
+                <button accesskey="b" id="bet" onclick="clearChickens(); betChickens(); multiplier()">Bet</button>
+                <button accesskey="c" id="cashout" onclick="winAmount(); disableButton(); addToBalance(); updateChickens();">CASH OUT</button>
                 <!-- <br> -->
                 <div id="timer">Chicken Multiplier: 0</div>
                 <p id="earn">You won 0 chicken(s)!</p>
