@@ -10,18 +10,20 @@
     </title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <!-- Overlay and Popup content -->
-  <!-- <div class="overlay" id="overlay">
-    <div class="popup">
-      <h2>Welcome to Chicken Gamble!</h2>
-      <p>How to Play: </p>
-        <br> Collect as many chickens as possible! <br>
-        <br> Try not to lose them all! <br>
-      <button onclick="closePopup()">Close</button>
-    </div>
-  </div> -->
+
+  <div id="losepopup">
+    <h2>Game Over</h2>
+    <p>Sorry, you lost the game.</p>
+    <button id="close-btn">Close</button>
+  </div>
+  <div id="winPopup">
+    <h2>You Win</h2>
+    <p>Congrats! You won the game.</p>
+    <button id="close-btn">Close</button>
+  </div>
   
 <body onload="updateChickens()">
+    
     <div class="box-wrapper">
         <div class="left-column">
             <div id="gamebox">
@@ -44,7 +46,7 @@
             </div>
                         
             <script src="buttonComponents.js"></script>
-            <!-- <script src="popUpComponents.js" ></script> -->
+            <script src="popUpComponents.js" ></script>
             <script src="ChickenCoop.js"></script>
             <script src="manageBalance.js"></script>
             <!-- <script src="gameRules.js"></script> -->
@@ -52,7 +54,6 @@
 
             
             <div class="chickencoop">
-
                 <div class="bank">
                     <h3>
                         You have
@@ -60,7 +61,10 @@
                     </h3>
                 </div> 
 
-                <img src="images/chickenCoopBG.gif" height = 200 width = 1200 alt="background">
+                <div class="background-field">
+                    <!-- <img src="images/chickenCoopBG.gif" alt="background"> -->
+                    <div id="myChickens"></div>
+                </div>
                 <!-- <marquee behavior="alternate" scrollamount="20">
                     <marquee behavior="alternate" scrollamount="20" direction="down" height=10px>
                         <img src="images/chicken.png" height = 50 width = 50 alt="bouncy chicken"> -->
@@ -68,7 +72,7 @@
                     <!-- </marquee> -->
         
                 <!-- </marquee> -->
-                <div id="myChickens"></div>
+
             </div>
             <!-- <script src="ChickenCoop.js"></script> -->
         </div>    
@@ -84,14 +88,14 @@
                     </u1>
                 </div>
                 <div id="ragebox">
-                    <h3>
+                    <!-- <h3>
                         Click me&#x2193;
-                    </h3>
+                    </h3> -->
                     <button onclick="rageButtonActivate()">
                         <img id="rageButton" src="images/IMG_0003.gif" height = 200 width = 200 alt="angry chicken">
                     </button>
                 </div>
-                <!-- <script src="buttonComponents.js"></script> -->
+                <script src="buttonComponents.js"></script>
 
             </div>
 

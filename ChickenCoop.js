@@ -1,6 +1,9 @@
 function updateChickens(){
     document.getElementById("myChickens").innerHTML = "";
     for (var i = 0; i < currentBalance.toFixed(0); i++){
+        console.log(i);
+        console.log(currentBalance.toFixed(0));
+
         let img = document.createElement('img');
         img.src = 'images/chicken.png';
         img.style.height = '48px';

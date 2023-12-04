@@ -7,10 +7,18 @@ function addToBalance(){
     const numberInput = document.getElementById("numberInput").value;
     const parsedNumber = parseFloat(numberInput);
     const currentTimestamp = parseFloat(timerElement.textContent);
-    const earn = parsedNumber * currentTimestamp;
+    const earn = (parsedNumber * currentTimestamp)-parsedNumber;
 
     currentBalance = parseFloat(currentBalance+earn);
     document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + " chicken(s)";
+    winningCondition();
+}
+
+function winningCondition() {
+    if (Number(currentBalance) >= 100) {
+        document.getElementById('winPopup').style.display = 'block';
+        console.log("you won")
+    }
 }
 
 
@@ -49,7 +57,11 @@ function deductFromBalance(){
         if (currentBalance == 0){
             document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
             updateChickens();
-        }
+            // NEED TO CALL FROM showlosepopup from popUpComponent 
+            // showLosePopup();
+            document.getElementById('losepopup').style.display = 'block';
+
+            }
         else{
             document.getElementById("earn").textContent = "Oh no! You lost " + parsedNumber.toFixed(0) + " chicken(s)!";
             updateChickens();

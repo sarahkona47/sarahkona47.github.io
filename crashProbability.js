@@ -51,7 +51,7 @@ function updateTimer() {
 function updateWinnableAmount() {
     const numberInput = parseFloat(document.getElementById("numberInput").value);
     const displayTime = parseFloat(timerElement.textContent);
-    const winnableAmount = numberInput * displayTime;
+    const winnableAmount = (numberInput * displayTime)-numberInput;
     // Update the winnable amount in the UI
     document.getElementById("winnableAmount").textContent = "You could have won " + winnableAmount.toFixed(0) + " chickens";
 }
@@ -105,7 +105,7 @@ function validateInput() {
 // Makes sure that bet amount is less than bank balance
 function checkBetAmount(){
     const numberInput = parseFloat(document.getElementById("numberInput").value);
-    if (numberInput <= currentBalance){
+    if (numberInput <= currentBalance.toFixed(0)){
         return true;
     }
     else{
