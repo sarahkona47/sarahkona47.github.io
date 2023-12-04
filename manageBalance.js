@@ -16,7 +16,7 @@ function addToBalance(){
 
 function winningCondition() {
     if (Number(currentBalance) >= 100) {
-        document.getElementById('winPopup').style.display = 'block';
+        showWinPopup();
         console.log("you won")
     }
 }
@@ -57,14 +57,13 @@ function deductFromBalance(){
         if (currentBalance == 0){
             document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
             updateChickens();
-            // NEED TO CALL FROM showlosepopup from popUpComponent 
-            // showLosePopup();
-            document.getElementById('losepopup').style.display = 'block';
-
+            showLosePopup();
+            winAmountReset();
             }
         else{
             document.getElementById("earn").textContent = "Oh no! You lost " + parsedNumber.toFixed(0) + " chicken(s)!";
             updateChickens();
+            winAmountReset();
         }
     }
 }

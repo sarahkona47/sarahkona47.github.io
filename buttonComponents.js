@@ -35,3 +35,27 @@ function rageButtonActivate(){
     document.getElementById("rageButton").src="images/IMG_0011.gif";
     setTimeout(() => {   document.getElementById("rageButton").src="images/IMG_0003.gif"; }, 200);
 }
+
+function disableBetButton(){
+    const betButton = document.getElementById("bet");
+
+    betButton.disabled = true;
+}
+
+function disableCashOutButton(){
+    const cashoutButton = document.getElementById("cashout");
+
+    cashoutButton.disabled = true;
+}
+
+function disableNumberInput(){
+    numberInput.disabled = true;
+}
+
+function enableCashButton(){
+    const cashoutButton = document.getElementById("cashout");
+
+    cashoutButton.disabled = false;
+}
+
+

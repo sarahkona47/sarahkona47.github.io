@@ -40,6 +40,7 @@ function updateTimer() {
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
         prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n'); 
         enableButton();
+        disableCashOutButton();
         intervals.length = 0;
         // reset(numberInput);
     } else{
@@ -120,6 +121,7 @@ function multiplier(){
     const numberInput = parseFloat(document.getElementById("numberInput").value);
     // we need to add the validation function here - validateInput();
     if (checkBetAmount()){
+        betChickens();
         updateTimer();
         setInterval(updateCurrentTime, 1000);
     }
@@ -135,8 +137,12 @@ function winAmount(){
     const numberInput = document.getElementById("numberInput").value;
     const parsedNumber = parseFloat(numberInput);
     const currentTimestamp = parseFloat(timerElement.textContent);
-    const earn = parsedNumber * currentTimestamp;
+    const earn = (parsedNumber * currentTimestamp) - parsedNumber;
     document.getElementById("earn").textContent = "You won " + earn.toFixed(0) + " chicken(s)!";
+}
+
+function winAmountReset() {
+    document.getElementById("earn").textContent = ""
 }
 
 // Need a function to reset all the text when a bet is finished

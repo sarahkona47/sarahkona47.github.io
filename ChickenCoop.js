@@ -16,6 +16,9 @@ function updateChickens(){
 // Window.onload = addStartingChicken();
 
 function betChickens(){
+    // if (document.getElementById("numberInput").value >= currentBalance) {
+    //     document.getElementById("betChicken").textContent = "";
+    // } else {
     document.getElementById("betChickens").textContent = "You bet "
     for (var i = 0; i < document.getElementById("numberInput").value; i++){
         let img = document.createElement('img');
