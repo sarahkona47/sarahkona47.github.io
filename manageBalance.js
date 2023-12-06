@@ -19,6 +19,7 @@ function winningCondition() {
         showWinPopup();
         console.log("you won")
     }
+    disableButton(); 
 }
 
 

@@ -83,24 +83,14 @@ function shuffleArray(array) {
     }
 }
 
-// need to add in a function that validates input type WORK IN PROGRESS
+// Validates number input using Regex
 function validateInput() {
-    const numberInput = document.getElementById("numberInput");
-
-    numberInput.addEventListener("bet", function(event) {
-        const inputValue = event.target.value;
-        const regex = /\$?\d+(,\d{3})*(\.\d{2})?$/; // Regular expression to match up to two decimal points
-        if (!regex.test(inputValue)) {
-            // If the input does not match the pattern, clear the input field or handle the error accordingly
-            document.getElementById("numberInput").textContent = " ";
-            event.target.value = inputValue.slice(0, -1); // Remove the last character (invalid input)
-            // You can also show an error message to the user if needed
-            // For example: errorElement.textContent = "Please enter a number with up to two decimal points";
-        }
-        else {
-            return numberInput; 
-        }
-    });
+    const regex = /^[1-9]\d*$/; 
+    const numberInput = parseFloat(document.getElementById("numberInput").value);
+    if (regex.test(numberInput) === false) {
+    } else {
+        return true; 
+    }
 }
 
 // Makes sure that bet amount is less than bank balance
@@ -120,7 +110,7 @@ function multiplier(){
     crashTime = Math.floor(Math.random() *10000);
     const numberInput = parseFloat(document.getElementById("numberInput").value);
     // we need to add the validation function here - validateInput();
-    if (checkBetAmount()){
+    if (validateInput() === true && checkBetAmount()){
         betChickens();
         updateTimer();
         setInterval(updateCurrentTime, 1000);
