@@ -23,12 +23,12 @@ Our crash simulator the idea of betting chickens instead of money.
 
 You will be given 3 chickens to start, your goal is to win by reaching 100 chickens in your chicken coop. The game will end if you lose all of your chickens.
 
-### Features
+### ⭐️ Features ⭐️
 
-#### Chicken Coop
-#### History Trends 
+#### 🐔 Chicken Coop
+#### 📈 History Trends 
 Use this history trends tab to look at the previous crash points. The trend is red if the crash point is below 2.00 and green if it is above 2.00
-#### Rage Button
+#### 😡 Rage Button
 Press this button on the right bottom of your screen to release your rage when the bets are going your way! 
 
 ## Technologies
