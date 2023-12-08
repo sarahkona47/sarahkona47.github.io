@@ -1,20 +1,17 @@
 // Declare Variables
 var previousCrashes = [];
 const intervals = [];
-// const startBalance = 3;
-// var currentBalance = 3;
 
 const numberInput = document.getElementById("numberInput");
 const timerElement = document.getElementById("timer");
-// var parsedNumber = parseFloat(numberInput);
 
 const cashoutButton = document.getElementById("cashout");
 const betButton = document.getElementById("bet");
 
 // Probability ranges used by generate_intervals
 const probabilityRanges = [
-    { minTime: 1.00, maxTime: 1.50, totalProbability: 0.2 }, // 2.00-3.00: 5% crash
-    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.1 }, // 2.00-3.00: 20% crash
+    { minTime: 1.00, maxTime: 1.50, totalProbability: 0.2 }, // 2.00-3.00: 20% crash
+    { minTime: 1.50, maxTime: 2.10, totalProbability: 0.1 }, // 2.00-3.00: 10% crash
     { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
     { minTime: 4.00, maxTime: 5.00, totalProbability: 0.08 }, // 4.00-5.00: 8% crash
     // { minTime: 5.00, maxTime: 6.00, totalProbability: 0.05 }, // 5.00-6.00: 5% crash
@@ -36,13 +33,12 @@ function updateTimer() {
     intervals.push(...generate_intervals(probabilityRanges));
     if (displayTime >= intervals[0]) {
         deductFromBalance();
-        disableButton();
         timerElement.textContent = displayTime.toFixed(2) + "x Crash!";
-        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n'); 
-        enableButton();
         disableCashOutButton();
+        enableBetButton();
+        enableNumberInput();
+        prevCrashes('Crashed at ' + displayTime.toFixed(2) + 'x \n'); 
         intervals.length = 0;
-        // reset(numberInput);
     } else{
         requestAnimationFrame(updateTimer);
     }
@@ -111,13 +107,16 @@ function multiplier(){
     const numberInput = parseFloat(document.getElementById("numberInput").value);
     // we need to add the validation function here - validateInput();
     if (validateInput() === true && checkBetAmount()){
+        disableBetButton();
+        disableNumberInput();
+        enableCashButton();
         betChickens();
-        updateTimer();
-        setInterval(updateCurrentTime, 1000);
+        setInterval(updateTimer(), 1000);
     }
     else{
         document.getElementById("earn").textContent = "Only bet what you have!";
-        enableButton();
+        enableBetButton();
+        disableCashOutButton();
     }
 }
   
