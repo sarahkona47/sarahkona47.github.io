@@ -16,7 +16,7 @@ Inspired by the gambling game called "crash", we welcome you to experience the a
 Users are able to play the game at this link: https://sarahkona47.github.io./ 
 
 ### Rules
-Our crash simulator the idea of betting chickens instead of money. 
+In our crash simulator, we bet chickens instead of money. 
 
 - Bet your chickens and watch it multiply!
 - Cash out before the multiplier crashes; if not you will lose your bet!
@@ -26,6 +26,7 @@ You will be given 3 chickens to start, your goal is to win by reaching 100 chick
 ### ⭐️ Features ⭐️
 
 #### 🐔 Chicken Coop
+Along with the chicken balance, you are able to visually see your chickens grow or shrink in your chicken coop!
 #### 📈 History Trends 
 Use this history trends tab to look at the previous crash points. The trend is red if the crash point is below 2.00 and green if it is above 2.00
 #### 😡 Rage Button
