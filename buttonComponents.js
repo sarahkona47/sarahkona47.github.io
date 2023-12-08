@@ -42,5 +42,5 @@ function enableNumberInput(){
 // Activates the rage button by displaying chicken crushed image when clicked
 function rageButtonActivate(){
     document.getElementById("rageButton").src="images/IMG_0011.gif";
-    setTimeout(() => {   document.getElementById("rageButton").src="images/IMG_0003.gif"; }, 200);
+    setTimeout(() => {   document.getElementById("rageButton").src="images/IMG_0024 (1).gif"; }, 200);
 }
