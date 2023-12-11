@@ -134,28 +134,6 @@ function winAmountReset() {
     document.getElementById("earn").textContent = ""
 }
 
-// Need a function to reset all the text when a bet is finished
-// function reset() {
-//     document.getElementById("earn").textContent = "";
-// }
-
-///DONT TOUCH THIS THIS IS MINE 
-
-
-function addChickenOnWin(){
-    chickenAmount = Math.round(earn);
-
-}
-
-function chickenImage(){
-    let img = document.createElement('img');
-    img.src = 'images/chicken.png';
-    img.style.height = '50px';
-    img.style.width = '50px';
-}
-//// YO DONT TOUCH THIS
-
-
 //Previous Crashes
 
 function prevCrashes(message) {
