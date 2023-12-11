@@ -18,6 +18,7 @@ function winningCondition() {
     if (Number(currentBalance) >= 100) {
         showWinPopup();
         console.log("you won")
+        location.reload();
     }
     disableButton(); 
 }
@@ -37,8 +38,7 @@ function deductFromBalance(){
             document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
             updateChickens();
             showLosePopup();
-            winAmountReset();
-            }
+            winAmountReset();            }
         else{
             document.getElementById("earn").textContent = "Oh no! You lost " + parsedNumber.toFixed(0) + " chicken(s)!";
             updateChickens();

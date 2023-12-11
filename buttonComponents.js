@@ -44,3 +44,8 @@ function rageButtonActivate(){
     document.getElementById("rageButton").src="images/IMG_0011.gif";
     setTimeout(() => {   document.getElementById("rageButton").src="images/IMG_0025.gif"; }, 200);
 }
+
+
+function refresh() {
+    location.reload();
+}
