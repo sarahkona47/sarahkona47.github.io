@@ -1,4 +1,3 @@
-// buttonComponents class manages all functions of the button 
 // Disable elements
 function disableBetButton(){
     const betButton = document.getElementById("bet");
@@ -44,7 +43,6 @@ function rageButtonActivate(){
     document.getElementById("rageButton").src="images/IMG_0011.gif";
     setTimeout(() => {   document.getElementById("rageButton").src="images/IMG_0025.gif"; }, 200);
 }
-
 
 function refresh() {
     location.reload();

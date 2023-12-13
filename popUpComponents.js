@@ -1,4 +1,3 @@
-
 function showLosePopup() {
   document.getElementById('losepopup').style.display = 'block';
 }
@@ -14,4 +13,3 @@ function closeWinPopup(){
   document.getElementById('winPopup').style.display = 'none';
 }
 
-document.getElementById('close-btn').addEventListener('click', closeLosePopup);
