@@ -1,16 +1,19 @@
 // Manages button components
 
 // Disable elements
+// Disable bet button
 function disableBetButton(){
     const betButton = document.getElementById("bet");
     betButton.disabled = true;
 }
 
+// Disable cash out button
 function disableCashOutButton(){
     const cashoutButton = document.getElementById("cashout");
     cashoutButton.disabled = true;
 }
 
+// Disables number input
 function disableNumberInput(){
     numberInput.disabled = true;
 }
@@ -26,16 +29,19 @@ function checkDisabled(button){
 }
 
 // Enable elements
+// Enables cash out button
 function enableCashButton(){
     const cashoutButton = document.getElementById("cashout");
     cashoutButton.disabled = false;
 }
 
+// Enables bet button
 function enableBetButton(){
     const betButton = document.getElementById("bet");
     betButton.disabled = false;
 }
 
+// Enables number input
 function enableNumberInput(){
     numberInput.disabled = false;
 }
