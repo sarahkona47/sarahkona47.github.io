@@ -1,4 +1,6 @@
-// manageBalance manages balance, transactions
+// Manages current balance 
+
+// Declare variables
 const startBalance = 3;
 var currentBalance = 3;
 
@@ -14,13 +16,13 @@ function addToBalance(){
     winningCondition();
 }
 
+// If you have more than 100 chickens, you win
 function winningCondition() {
     if (Number(currentBalance) >= 100) {
         showWinPopup();
         console.log("you won")
         location.reload();
     }
-    disableButton(); 
 }
 
 // If cashout button is still enabled (the user didn't press it), deducts lost money from bank balance

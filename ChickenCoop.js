@@ -1,3 +1,6 @@
+// Manages chicken coop elements
+
+// Updated the number of chickens you currently have
 function updateChickens(){
     document.getElementById("myChickens").innerHTML = "";
     for (var i = 0; i < currentBalance.toFixed(0); i++){
@@ -13,12 +16,8 @@ function updateChickens(){
     }
 }    
 
-// Window.onload = addStartingChicken();
-
+// Shows the number of chickens you bet
 function betChickens(){
-    // if (document.getElementById("numberInput").value >= currentBalance) {
-    //     document.getElementById("betChicken").textContent = "";
-    // } else {
     document.getElementById("betChickens").textContent = "You bet "
     for (var i = 0; i < document.getElementById("numberInput").value; i++){
         let img = document.createElement('img');
@@ -30,6 +29,7 @@ function betChickens(){
     }
 }
 
+// Clears the number of chickens you bet each time you bet a new amount
 function clearChickens(){
     document.getElementById("betChickens").innerHTML = "";
 }

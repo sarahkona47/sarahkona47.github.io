@@ -1,3 +1,5 @@
+// Manages button components
+
 // Disable elements
 function disableBetButton(){
     const betButton = document.getElementById("bet");
@@ -13,7 +15,7 @@ function disableNumberInput(){
     numberInput.disabled = true;
 }
 
-//Check if select button is disabled
+// Check if select button is disabled
 function checkDisabled(button){
     if (button.disabled === true){
         return true;
@@ -23,7 +25,7 @@ function checkDisabled(button){
     }
 }
 
-//Enable elements
+// Enable elements
 function enableCashButton(){
     const cashoutButton = document.getElementById("cashout");
     cashoutButton.disabled = false;
@@ -44,6 +46,7 @@ function rageButtonActivate(){
     setTimeout(() => {   document.getElementById("rageButton").src="images/IMG_0025.gif"; }, 200);
 }
 
+// Refreshes on load
 function refresh() {
     location.reload();
 }

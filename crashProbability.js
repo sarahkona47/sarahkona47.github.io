@@ -1,3 +1,5 @@
+// Manages crash probaiblity and multiplier
+
 // Declare Variables
 var previousCrashes = [];
 const intervals = [];
@@ -14,10 +16,9 @@ const probabilityRanges = [
     { minTime: 1.50, maxTime: 2.10, totalProbability: 0.1 }, // 2.00-3.00: 10% crash
     { minTime: 3.00, maxTime: 4.00, totalProbability: 0.1 }, // 3.00-4.00: 10% crash
     { minTime: 4.00, maxTime: 5.00, totalProbability: 0.08 }, // 4.00-5.00: 8% crash
-    // { minTime: 5.00, maxTime: 6.00, totalProbability: 0.05 }, // 5.00-6.00: 5% crash
-    // { minTime: 6.00, maxTime: 9.00, totalProbability: 0.05 }, // 6.00-9.00: 5% crash
-    // { minTime: 9.00, maxTime: 15.00, totalProbability: 0.02 }, // 9.00-15.00: 2% crash
-    // { minTime: 15.00, maxTime: 100.00, totalProbability: 0.01 }, // 15.00-100.00: 1% crash
+    { minTime: 5.00, maxTime: 6.00, totalProbability: 0.05 }, // 5.00-6.00: 5% crash
+    { minTime: 6.00, maxTime: 9.00, totalProbability: 0.05 }, // 6.00-9.00: 5% crash
+    { minTime: 9.00, maxTime: 15.00, totalProbability: 0.02 }, // 9.00-15.00: 2% crash
 ]
 
 let startTime = Date.now();
@@ -53,8 +54,7 @@ function updateWinnableAmount() {
     document.getElementById("winnableAmount").textContent = "You could have won " + winnableAmount.toFixed(0) + " chickens";
 }
 
-//** Generate different intervals based on fixed probability ranges defined as probabilityRanges above */ 
-
+// Generate different intervals based on fixed probability ranges defined as probabilityRanges above 
 function generate_intervals(probabilityRange){
     const intervals = [];
     probabilityRange.forEach(rangeInfo => {
@@ -134,8 +134,7 @@ function winAmountReset() {
     document.getElementById("earn").textContent = ""
 }
 
-//Previous Crashes
-
+// Previous Crashes
 function prevCrashes(message) {
     previousCrashes.push(message);
     const crashTrends = document.getElementById('trends');
@@ -147,7 +146,7 @@ function prevCrashes(message) {
 
     // Apply color directly to the crashList based on the crash value
     if (crashValue < 2) {
-        crashList.style.color = 'red';
+        crashList.style.color = 'purple';
     } else {
         crashList.style.color = 'green';
     }
@@ -156,6 +155,7 @@ function prevCrashes(message) {
     crashTrends.appendChild(crashList);
 }
 
+// Clears message showing earned amount and winnable amount
 function clearMessages() {
     document.getElementById("earn").textContent = "";
     document.getElementById("winnableAmount").textContent = "";

@@ -19,29 +19,20 @@ body {
 .left-column {
     display: flex;
     flex-direction: column;
-    /* width: 80vw; */
 }
 
 .left-column div {
     margin: 8 8px;
-    /* border: solid 1px rgb(136, 0, 255); */
-    /* background-color: rgb(201, 145, 251); */
 }
-
-/* .left-column div+div {
-    margin-top: 8px;
-} */
 
 .bank{
     background-color: rgb(227, 200, 240);
-    /* height: 2.5vh; */
 }
 
 
 #gamebox {
     flex-grow: 1;
     flex-direction: column;
-    /* border: solid 1px rgb(136, 0, 255);  */
     height: 75%; 
 }
 
@@ -69,12 +60,7 @@ body {
 
 .chickencoop {
     flex-grow: 1;
-    /* border: solid 3px rgb(136, 0, 255); */
-    /* height: 180; */
     height: 25%;
-    /* width: 85vw; */
-    /* position: absolute; */
-    /* bottom: 0; */
  }
 
 .background-field {
@@ -96,12 +82,10 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;
-    /* width: 20vw; */
 }
 
 .right-column div {
     margin: 0 8px;
-    /* border: solid 1px rgb(136, 0, 255); */
 }
 
 .right-column div+div {
@@ -110,29 +94,13 @@ body {
 
 #histbox{
     flex: 2;
-    /* height: 20px; */
-    /* min-height: 75vh; */
-    /* margin: 10px; */
     border: solid 1px rgb(136, 0, 255);
-    /* height: 70%;
-    width: 90%; */
 }  
 
 #ragebox {
-    /* position: absolute; */
-    /* bottom: 0; */
     height: 25%;
     width: 25%; 
-    /* flex: 1;  */
 }
-
-/* marquee{
-    position: relative;
-    z-index: 9999;
-    height: 180px;
-    width: 100%;
-    flex-grow: 1;
-} */
 
 #losepopup {
     display: none;
