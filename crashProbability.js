@@ -105,7 +105,8 @@ function multiplier(){
     startTime = Date.now();
     crashTime = Math.floor(Math.random() *10000);
     const numberInput = parseFloat(document.getElementById("numberInput").value);
-    // we need to add the validation function here - validateInput();
+    clearMessages();
+    
     if (validateInput() === true && checkBetAmount()){
         disableBetButton();
         disableNumberInput();
@@ -114,7 +115,7 @@ function multiplier(){
         setInterval(updateTimer(), 1000);
     }
     else{
-        document.getElementById("earn").textContent = "Only bet what you have!";
+        document.getElementById("betChickens").textContent = "Only bet what you have!";
         enableBetButton();
         disableCashOutButton();
     }
@@ -130,9 +131,9 @@ function winAmount(){
     document.getElementById("earn").textContent = "You won " + earn.toFixed(0) + " chicken(s)!";
 }
 
-function winAmountReset() {
-    document.getElementById("earn").textContent = ""
-}
+// function winAmountReset() {
+//     document.getElementById("earn").textContent = ""
+// }
 
 // Previous Crashes
 function prevCrashes(message) {

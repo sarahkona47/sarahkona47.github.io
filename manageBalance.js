@@ -1,4 +1,4 @@
-// Manages current balance 
+// manageBalance manages chicken balance 
 
 // Declare variables
 const startBalance = 3;
@@ -36,7 +36,7 @@ function deductFromBalance(){
     else{
         currentBalance = parseFloat(currentBalance-parsedNumber);
         document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + " chicken(s)";
-        if (currentBalance == 0){
+        if (currentBalance.toFixed(0) == 0){
             document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
             updateChickens();
             showLosePopup();
@@ -44,7 +44,8 @@ function deductFromBalance(){
         else{
             document.getElementById("earn").textContent = "Oh no! You lost " + parsedNumber.toFixed(0) + " chicken(s)!";
             updateChickens();
-            winAmountReset();
+            disableCashOutButton();
+            enableBetButton();
         }
     }
 }
