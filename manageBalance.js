@@ -25,6 +25,14 @@ function winningCondition() {
     }
 }
 
+// Losing message and popup
+function losingCondition(){
+    document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
+    updateChickens();
+    showLosePopup();
+    clearMessages();  
+}
+
 // If cashout button is still enabled (the user didn't press it), deducts lost money from bank balance
 function deductFromBalance(){
     const numberInput = document.getElementById("numberInput").value;
@@ -37,10 +45,8 @@ function deductFromBalance(){
         currentBalance = parseFloat(currentBalance-parsedNumber);
         document.getElementById("chickenBalance").textContent = currentBalance.toFixed(0) + " chicken(s)";
         if (currentBalance.toFixed(0) == 0){
-            document.getElementById("earn").textContent = "Oh no! You lost all your chickens!";
-            updateChickens();
-            showLosePopup();
-            winAmountReset();            }
+            losingCondition();           
+        }
         else{
             document.getElementById("earn").textContent = "Oh no! You lost " + parsedNumber.toFixed(0) + " chicken(s)!";
             updateChickens();

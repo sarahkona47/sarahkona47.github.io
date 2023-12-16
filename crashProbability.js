@@ -131,10 +131,6 @@ function winAmount(){
     document.getElementById("earn").textContent = "You won " + earn.toFixed(0) + " chicken(s)!";
 }
 
-// function winAmountReset() {
-//     document.getElementById("earn").textContent = ""
-// }
-
 // Previous Crashes
 function prevCrashes(message) {
     previousCrashes.push(message);
