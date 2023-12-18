@@ -21,7 +21,7 @@ In our crash simulator, we bet chickens instead of money.
 - Bet your chickens and watch it multiply!
 - Cash out before the multiplier crashes; if not you will lose your bet!
 
-You will be given 3 chickens to start, your goal is to win by reaching 100 chickens in your chicken coop. You will lose if you bet away all your chickens!/
+You will be given 3 chickens to start, your goal is to win by reaching 100 chickens in your chicken coop. You will lose if you bet away all your chickens!\
 To replay the game, just refresh the screen, use click the Refresh button. 
 
 ### ⭐️ Features ⭐️
