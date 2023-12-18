@@ -4,7 +4,8 @@ Authors: Eunice Lim, Daniel Seo, Sarah Choi \
 \
 COMP 225: Software Development and Design \
 \
-PICTURE OF THE GAME WILL GO HERE
+<img width="430" alt="Game Image" src="https://github.com/sarahkona47/sarahkona47.github.io/blob/main/images/gameimage.png">
+
 ## Vision
 “Gambling made simple, easy, and gamified - without consequences!"\
 \
