@@ -1,4 +1,4 @@
-// Manages crash probaiblity and multiplier
+// Manages crash probability and multiplier
 
 // Declare Variables
 var previousCrashes = [];
